@@ -1,27 +1,39 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Header from "../components/Header";
 import HomeLeft from "../components/HomeLeft/HomeLeft";
 import HomeRight from "../components/HomeRight/HomeRight";
 
 function Dashboard() {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  const { user, isSuccess, isError, isLoading, message } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (!user) {
+    if(isError){
+      toast.error(message);
+    }
+    if(isSuccess || user){
+      
+    }
+    const authExits = localStorage.getItem("user");
+    if (!authExits) {
       navigate("/login");
     }
-  }, [user, navigate]);
+  }, [navigate]);
   return (
-    <div className="col-md-12 row home">
-      <div className="col-md-6">
-        <HomeLeft />
+    <>
+      <Header navigate="/users" navigateText="Quản lý tài khoản" />
+      <div className="col-md-12 row home">
+        <div className="col-md-6">
+          <HomeLeft />
+        </div>
+        <div className="col-md-6">
+          <HomeRight />
+        </div>
       </div>
-      <div className="col-md-6">
-        <HomeRight />
-      </div>
-    </div>
+    </>
   );
 }
 

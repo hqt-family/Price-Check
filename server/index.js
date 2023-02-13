@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use("/api/products", require("./routes/productRoute"));
 app.use("/api/prices", require("./routes/priceRoute"));
-app.use("/api/user", require("./routes/userRoute"));
+app.use("/api/user", require("./routes/authRoute"));
 
 app.use(errorHandler);
 app.listen(port, () => console.log(`Port is ${port}`));

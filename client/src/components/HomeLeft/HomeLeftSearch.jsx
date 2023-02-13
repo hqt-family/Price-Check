@@ -1,23 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getAll, getFilter } from "../../features/products/productSlice";
-
-function HomeLeftSearch() {
-  const [value, setValue] = useState("");
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const timeOutId = setTimeout(() => {
-      if (value === "") {
-        dispatch(getAll({ limit: 7, page: 1 }));
-      } else {
-        dispatch(getFilter({ keywords: value }));
-      }
-    }, 750);
-    return () => clearTimeout(timeOutId);
-  }, [value, dispatch]);
-
+function HomeLeftSearch({ value, setValue }) {
   return (
     <div className="home-left-search">
       <strong>Danh sách sản phẩm</strong>

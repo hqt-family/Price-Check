@@ -9,11 +9,11 @@ import Spinner from "../components/Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({
-    email: "",
+    name: "",
     password: "",
   });
+  const { name, password } = formData;
 
-  const { email, password } = formData;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -29,13 +29,13 @@ function Login() {
       navigate("/");
     }
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  }, [user, isError, isSuccess, message, dispatch, navigate]);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const userData = {
-      email,
+      name,
       password,
     };
 
@@ -55,22 +55,28 @@ function Login() {
 
   return (
     <>
-      <div class="pageLogin">
+      <div className="pageLogin">
         <section className="heading">
-          <img src="https://theme.hstatic.net/1000129940/1000985708/14/header-left-logo.png?v=591" alt="APSHOP"/>
-          <p>* Bạn đang yêu cầu truy cập vào trình kiểm tra giá sản phẩm. Vui lòng nhập địa chỉ email và mật khẩu để xác thực</p>
+          <img
+            src="https://theme.hstatic.net/1000129940/1000985708/14/header-left-logo.png?v=591"
+            alt="APSHOP"
+          />
+          <p>
+            * Bạn đang yêu cầu truy cập vào trình kiểm tra giá sản phẩm. Vui
+            lòng nhập địa chỉ name và mật khẩu để xác thực
+          </p>
         </section>
 
         <section className="form">
           <form onSubmit={onSubmit}>
             <div className="form-group">
               <input
-                type="email"
+                type="text"
                 className="form-control"
-                id="email"
-                name="email"
-                value={email}
-                placeholder="Địa chỉ email"
+                id="name"
+                name="name"
+                value={name}
+                placeholder="Địa chỉ name"
                 onChange={onChange}
               />
             </div>

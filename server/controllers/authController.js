@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const asyncHandler = require("express-async-handler");
 const User = require("../model/authModel");
+const { use } = require("../routes/authRoute");
 
 const getUsers = asyncHandler(async (req, res) => {
   const permission = req.query.permission;
@@ -78,8 +79,14 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const updateUser = asyncHandler(async (req, res) => {
-  const id = req.params.id;
-  console.log(id);
+  const user = await User.findById(req.body.id);
+  user.permission = req.body.permission;
+
+  const users = await User.find({
+    permission: { $not: { $regex: "master" } },
+  });
+  user.save();
+  res.status(200).json(users);
 });
 
 const generateToken = (id) => {

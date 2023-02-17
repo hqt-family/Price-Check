@@ -14,6 +14,7 @@ function HomeLeftData() {
       title: e.target.attributes["data-title"].value,
       image: e.target.attributes["data-image"].value,
       price: e.target.attributes["data-price"].value,
+      url: e.target.attributes["data-url"].value,
     };
     dispatch(createPrices(data));
   };
@@ -43,6 +44,7 @@ function HomeLeftData() {
                     product.images ? product.images[0].src : "/no-image.jpg"
                   }
                   data-price={product.variants[0].price}
+                  data-url={"https://apshop.vn/products/" + product.handle}
                   onClick={onClick}
                 >
                   <i className="fa fa-check"></i> Kiểm tra

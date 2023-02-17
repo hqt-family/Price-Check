@@ -8,13 +8,18 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function replaceToNumber(value) {
+  value = value.replace(/[^0-9]+/g, "");
+  return Number(value);
+}
+
 const getPrices = asyncHandler(async (req, res) => {
   const getPrice = await Price.find();
   res.status(200).json(getPrice);
 });
 
 const postPrice = asyncHandler(async (req, res) => {
-  const { id, title, image, price } = req.body;
+  const { id, title, image, price, url } = req.body;
   if (!id) {
     res.status(400);
     throw new Error("Missing productID");
@@ -35,6 +40,11 @@ const postPrice = asyncHandler(async (req, res) => {
     throw new Error("Missing productPrice");
   }
 
+  if (!url) {
+    res.status(400);
+    throw new Error("Missing productUrl");
+  }
+
   const priceExists = await Price.findOne({ productId: id });
 
   if (priceExists) {
@@ -45,6 +55,7 @@ const postPrice = asyncHandler(async (req, res) => {
       productTitle: title,
       productImage: image,
       productPrice: price,
+      productUrl: url,
       data: req.body.data,
     });
 
@@ -63,7 +74,7 @@ const putPrice = asyncHandler(async (req, res) => {
         const options = {
           uri: data[i].link,
           headers: {
-            'User-Agent': 'Request-Promise'
+            "User-Agent": "Request-Promise",
           },
           transform: function (body) {
             return cheerio.load(body);
@@ -78,117 +89,122 @@ const putPrice = asyncHandler(async (req, res) => {
       if (data[i].link.includes("gearvn")) {
         data[i] = {
           brand: "GEAR",
-          price: $(".product_sale_price").text().trim(),
+          price: replaceToNumber($(".product_sale_price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("anphatpc")) {
         data[i] = {
           brand: "ANPHATPC",
-          price: $(".js-pro-total-price").text().trim(),
+          price: replaceToNumber($(".js-pro-total-price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("hotgear")) {
         data[i] = {
           brand: "HOTGEARVN",
-          price: $(".product_sale_price").text().trim(),
+          price: replaceToNumber($(".product_sale_price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("kccshop")) {
         data[i] = {
           brand: "KCCSHOP",
-          price: $(".detail-n-price .n-num").text().trim(),
+          price: replaceToNumber($(".detail-n-price .n-num").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("gland")) {
         data[i] = {
           brand: "GLAND",
-          price: $("#product-info-price .pd-price").text().trim(),
+          price: replaceToNumber(
+            $("#product-info-price .pd-price").text().trim()
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("tplab")) {
         data[i] = {
           brand: "TPLAB",
-          price: $("#productPage .productPriceMain").text().trim(),
+          price: replaceToNumber(
+            $("#productPage .productPriceMain").text().trim()
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("phucanh")) {
         data[i] = {
           brand: "PHUCANH",
-          price: $("#product-info-price .detail-product-best-price")
-            .text()
-            .trim(),
+          price: replaceToNumber(
+            $("#product-info-price .detail-product-best-price").text().trim()
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("nguyenvu")) {
         data[i] = {
           brand: "NGUYENVU",
-          price: Number(
+          price: replaceToNumber(
             $('[property="product:price:amount"]').attr("content")
-          ).toLocaleString("it-IT", { style: "currency", currency: "VND" }),
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("tanthanhdanh")) {
         data[i] = {
           brand: "TANTHANHDANH",
-          price: Number(
+          price: replaceToNumber(
             $('[property="product:price:amount"]').attr("content")
-          ).toLocaleString("it-IT", { style: "currency", currency: "VND" }),
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("nguyencongpc")) {
         data[i] = {
           brand: "NGUYENCONGPC",
-          price: $(".detail-price .price").text().trim(),
+          price: replaceToNumber($(".detail-price .price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("hailong")) {
         data[i] = {
           brand: "HAILONG",
-          price: Number(
+          price: replaceToNumber(
             JSON.parse($("[type='application/ld+json']").text()).offers[0].price
-          ).toLocaleString("it-IT", {
-            style: "currency",
-            currency: "VND",
-          }),
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("vitinhlehuy")) {
         data[i] = {
           brand: "LEHUY",
-          price: $(".regular-price .price").text().trim(),
+          price: replaceToNumber($(".regular-price .price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("vitinhnguyenthang")) {
         data[i] = {
           brand: "NGUYENTHANG",
-          price: $(".bk-product-price").text().trim(),
+          price: replaceToNumber($(".bk-product-price").text().trim()),
           link: data[i].link,
         };
       } else if (data[i].link.includes("covapc")) {
         data[i] = {
           brand: "COVAPC",
-          price: $('[property="og:price:amount"]').attr("content"),
+          price: replaceToNumber(
+            $('[property="og:price:amount"]').attr("content")
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("logitech")) {
         data[i] = {
           brand: "LOGITECH",
-          price: $('.pricing-info span').text(),
+          price: replaceToNumber($(".pricing-info span").text()),
           link: data[i].link,
         };
-      }else if (data[i].link.includes("hacom")) {
+      } else if (data[i].link.includes("hacom")) {
         data[i] = {
           brand: "HACOM",
-          price: $('#product-info-price #js-pd-price').text(),
+          price: replaceToNumber($("#product-info-price #js-pd-price").text()),
           link: data[i].link,
         };
       }
     }
     await sleep(200);
   }
+  var dataSort = data.sort(({ price: a }, { price: b }) => a - b);
+
   // Xử lý data
 
-  updatePrice.data = data;
+  updatePrice.data = dataSort;
   await updatePrice.save();
   res.status(200).json(updatePrice);
 });

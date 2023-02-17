@@ -1,19 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
-
-function HomeRightHead() {
-  const { prices, isError, message } = useSelector(
-    (state) => state.prices
-  );
-
-  useEffect(() => {
-    if (isError) {
-      toast.error(message);
-    }
-  }, [prices, isError, message]);
-
+function HomeRightHead(props) {
+  const prices = props.data;
   return (
     <div className="home-right-head">
       {prices ? (
@@ -22,8 +9,19 @@ function HomeRightHead() {
             <img src={prices.productImage} alt={prices.productTitle} />
           </div>
           <div className="col-10">
-            <h3>{prices.productTitle}</h3>
-            <strong>{prices.productPrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</strong>
+            <h4>
+              <a target="_blank" href={prices.productUrl} rel="noreferrer">
+                {prices.productTitle}
+              </a>
+            </h4>
+            <strong>
+              {prices.productPrice
+                .toLocaleString("it-IT", {
+                  style: "currency",
+                  currency: "VND",
+                })
+                .replace(/\sVND/g, "₫")}
+            </strong>
           </div>
         </div>
       ) : (

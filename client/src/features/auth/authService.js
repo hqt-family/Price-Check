@@ -15,17 +15,22 @@ const loginUser = async (userData) => {
   }
 
   return response.data;
-};
+}; 
 
 const updateUser = async (userData) => {
-  const response = await axios.put(API_URL, { params: userData });
+  const response = await axios.put(API_URL + "update/" + userData.id, userData);
   return response.data;
+};
+
+const logoutUser = () => {
+  localStorage.removeItem("user");
 };
 
 const authServices = {
   getUsers,
   loginUser,
-  updateUser
+  updateUser,
+  logoutUser
 };
 
 export default authServices;

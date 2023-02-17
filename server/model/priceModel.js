@@ -18,6 +18,10 @@ const priceSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    productUrl: {
+      type: String,
+      require: true,
+    },
     data: {
       type: Array,
       default: [

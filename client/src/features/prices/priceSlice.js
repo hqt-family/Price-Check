@@ -74,10 +74,15 @@ export const priceSlice = createSlice({
       })
       .addCase(updatePrices.pending, (state) => {
         state.isLoading = true;
+        state.isError = false;
+        state.isSuccess = false;
+        state.message = "";
         state.prices = null;
       })
       .addCase(updatePrices.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isError = false;
+        state.message = "";
         state.isSuccess = true;
         state.prices = action.payload;
       })
@@ -85,6 +90,7 @@ export const priceSlice = createSlice({
         state.isLoading = true;
         state.isError = true;
         state.message = action.payload;
+        state.isSuccess = false;
         state.prices = null;
       });
   },

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/user/";
+const API_URL = "https://aps-check.onrender.com/api/user/";
 
 const getUsers = async (permission) => {
   const response = await axios.get(API_URL + "all", { params: permission });

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/prices/";
+const API_URL = "https://aps-check.onrender.com/api/prices/";
 
 const create = async (priceData, token) => {
   const config = {

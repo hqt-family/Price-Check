@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/products/";
+const API_URL = "https://aps-check.onrender.com/api/products/";
 
 const getAll = async (options) => {
   const response = await axios.get(API_URL + "all", { params: options });

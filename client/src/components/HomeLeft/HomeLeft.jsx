@@ -11,7 +11,7 @@ function HomeLeft() {
   useEffect(() => {
     const timeOutId = setTimeout(() => {
       if (value === "") {
-        dispatch(getAll({ limit: 8, page: 1 }));
+        dispatch(getAll({ limit: 9, page: 1 }));
       } else {
         dispatch(getFilter({ keywords: value }));
       }

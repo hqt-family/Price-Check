@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeRightDataYes from "./HomeRightDataYes";
 
 function HomeRightData(props) {
   const authExits = localStorage.getItem("user");
+  const [flagForm, setFlagForm] = useState(props.data.data);
   const prices = props.data;
   const onChange = (e) => {
     let newFormData = [...props.formData];
@@ -11,14 +12,12 @@ function HomeRightData(props) {
     };
     props.setFormData(newFormData);
   };
-
   const onClick = (e) => {
-    console.log(e.target);
-    let newFormData = [...props.formData];
+    let newFormData = [...flagForm];
     newFormData[e.target.attributes["data-stt"].value] = {
       link: null,
     };
-    props.setFormData(newFormData);
+    setFlagForm(newFormData);
   };
   return (
     <>
@@ -51,8 +50,8 @@ function HomeRightData(props) {
         </div>
       )}
       {prices &&
-        props.formData &&
-        props.formData.map((data, index) =>
+        flagForm &&
+        flagForm.map((data, index) =>
           data.link ? (
             <HomeRightDataYes
               key={index}

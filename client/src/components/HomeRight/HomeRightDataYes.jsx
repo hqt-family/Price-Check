@@ -10,18 +10,18 @@ function HomeRightDataYes(props) {
           </a>
         </div>
         <div className="col-5 text-right">
-          {props.price
+          {props.price && props.price
             .toLocaleString("it-IT", { style: "currency", currency: "VND" })
             .replace(/\sVND/g, "₫")}
         </div>
-        <div className="col-2">
+        <div className="col-2 text-right">
           <button
             type="button"
             className="btn btn-block p-0"
             onClick={props.onClick}
             data-stt={props.stt}
           >
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            x
           </button>
         </div>
       </div>

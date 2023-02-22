@@ -74,7 +74,8 @@ const putPrice = asyncHandler(async (req, res) => {
         const options = {
           uri: data[i].link,
           headers: {
-            "User-Agent": "Request-Promise",
+            "User-Agent":
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36",
           },
           transform: function (body) {
             return cheerio.load(body);
@@ -187,7 +188,11 @@ const putPrice = asyncHandler(async (req, res) => {
       } else if (data[i].link.includes("logitech")) {
         data[i] = {
           brand: "LOGITECH",
-          price: replaceToNumber($(".pricing-info span").text()),
+          price: replaceToNumber(
+            JSON.parse(
+              $("[type='application/ld+json']").text()
+            ).model[0].offers[0].price.split(".")[0]
+          ),
           link: data[i].link,
         };
       } else if (data[i].link.includes("hacom")) {
@@ -196,6 +201,109 @@ const putPrice = asyncHandler(async (req, res) => {
           price: replaceToNumber($("#product-info-price #js-pd-price").text()),
           link: data[i].link,
         };
+      } else if (data[i].link.includes("lg.com")) {
+        data[i] = {
+          brand: "LG",
+          price: replaceToNumber($("meta[itemprop='price']").attr("content")),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("fl-esports")) {
+        data[i] = {
+          brand: "Fl-esports",
+          price: replaceToNumber(
+            JSON.parse($('[type="application/ld+json"]').text())["@graph"][6]
+              .offers.price
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("akkogear.com")) {
+        data[i] = {
+          brand: "Akkogear",
+          price: replaceToNumber(
+            JSON.parse($('[type="application/ld+json"]').last().text())[
+              "@graph"
+            ][1].offers[0].price
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("edravn.com/")) {
+        data[i] = {
+          brand: "Edravn",
+          price: replaceToNumber(
+            $(".p-detail-price-wrap .p-detail-price").text()
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("asus.com")) {
+        data[i] = {
+          brand: "Asus",
+          price: replaceToNumber(
+            JSON.parse($('[type="application/ld+json"]').first().text())[0]
+              .offers.price
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("tinhocngoisao.com")) {
+        data[i] = {
+          brand: "Tinhocngoisao",
+          price: replaceToNumber(
+            $('[property="og:price:amount"]').attr("content")
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("khoavang.vn")) {
+        data[i] = {
+          brand: "Khoavang",
+          price: replaceToNumber($("#pdp-price").val()),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("minhancomputer.com")) {
+        data[i] = {
+          brand: "MinhAnComputer",
+          price: replaceToNumber(
+            JSON.parse(
+              $('[type="application/ld+json"]:contains("price")').text()
+            ).offers.lowPrice
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("songphuong.vn")) {
+        data[i] = {
+          brand: "Songphuong",
+          price: replaceToNumber(
+            $('[property="product:price:amount"]').attr("content")
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("maytinhbinhduong.com")) {
+        data[i] = {
+          brand: "Maytinhbinhduong",
+          price: replaceToNumber(
+            JSON.parse(
+              $('[type="application/ld+json"]:contains("price")').text()
+            ).offers[0].price
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("memoryzone.com")) {
+        data[i] = {
+          brand: "Memoryzone",
+          price: replaceToNumber(
+            $('[property="og:price:amount"]').attr("content")
+          ),
+          link: data[i].link,
+        };
+      } else if (data[i].link.includes("lapvip")) {
+        console.log($('[type="application/ld+json"]:contains("price")').text());
+        // data[i] = {
+        //   brand: "Lapvip",
+        //   price: replaceToNumber(
+        //     JSON.parse(
+        //       $('[type="application/ld+json"]:contains("price")').text()
+        //     ).offers.price
+        //   ),
+        //   link: data[i].link,
+        // };
       }
     }
     await sleep(200);

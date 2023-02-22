@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
@@ -16,6 +17,19 @@ app.use(cors());
 app.use("/api/products", require("./routes/productRoute"));
 app.use("/api/prices", require("./routes/priceRoute"));
 app.use("/api/user", require("./routes/authRoute"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, "../", "client", "build", "index.html")
+    )
+  );
+}else{
+  app.get('/', (req, res) => {
+    res.send("Please set to production")
+  })
+}
 
 app.use(errorHandler);
 app.listen(port, () => console.log(`Port is ${port}`));

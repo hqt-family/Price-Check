@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { createPrices } from "../../features/prices/priceSlice";
@@ -18,9 +19,6 @@ function HomeLeftData() {
     };
     dispatch(createPrices(data));
   };
-  if (isError) {
-    toast.error(message);
-  }
   if (isLoading) {
     return <Spinner />;
   }

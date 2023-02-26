@@ -19,6 +19,7 @@ function HomeRight() {
     if (prices) {
       setFormData(prices.data);
     }
+    dispatch(reset);
   }, [prices, isError, message, dispatch]);
 
   const onSubmit = (e) => {

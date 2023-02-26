@@ -6,13 +6,16 @@ function HomeRightDataYes(props) {
       <div className="row">
         <div className="col-5">
           <a target="_blank" rel="noreferrer" href={props.link}>
-            {props.brand}
+            {props.brand ? props.brand : props.link}
           </a>
         </div>
         <div className="col-5 text-right">
-          {props.price && props.price
-            .toLocaleString("it-IT", { style: "currency", currency: "VND" })
-            .replace(/\sVND/g, "₫")}
+          {props.price && !String(props.price).includes("$")
+            ? props.price
+                .toLocaleString("it-IT", { style: "currency", currency: "VND" })
+                .replace(/\sVND/g, "₫")
+            : props.price
+                .toLocaleString("en-US", { style: "currency", currency: "USD" })}
         </div>
         <div className="col-2 text-right">
           <button

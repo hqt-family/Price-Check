@@ -87,7 +87,7 @@ export const priceSlice = createSlice({
         state.prices = action.payload;
       })
       .addCase(updatePrices.rejected, (state, action) => {
-        state.isLoading = true;
+        state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
         state.isSuccess = false;

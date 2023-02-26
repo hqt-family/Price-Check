@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
 
 @keyframes spin {
   0% {
@@ -14,7 +14,7 @@
 body,
 html {
   background-color: #efefef;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 img {
@@ -68,6 +68,9 @@ ul {
 .home {
   padding: 30px 15px;
   margin: 0;
+  @media (max-width: 767px) {
+    padding: 15px 0;
+  }
   .home-left {
     padding: 15px;
     background-color: #fff;
@@ -157,10 +160,17 @@ ul {
     }
   }
   .home-right {
+    margin-top: 30px;
+    @media (max-width: 767px) {
+      margin-top: 15px;
+    }
     .home-right-head {
       padding: 15px;
       background-color: #fff;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
+      // @media (max-width: 767px) {
+      //   margin-bottom: 15px;
+      // }
       strong {
         color: red;
       }
@@ -169,7 +179,7 @@ ul {
         text-align: center;
         color: red;
       }
-      a{
+      a {
         color: #333;
         font-size: 20px;
       }
@@ -183,7 +193,7 @@ ul {
       gap: 15px;
       .home-right-data-top {
         padding-bottom: 15px;
-        border-bottom: 1px solid #DbDbDb;
+        border-bottom: 1px solid #dbdbdb;
         .home-right-data-top-title {
           strong {
             color: red;
@@ -191,8 +201,37 @@ ul {
         }
       }
       .home-right-data-item {
-        width: calc(50% - 15px);
+        width: calc((100% / 3) - 15px);
         margin: 0;
+        @media (max-width: 767px) {
+          width: calc((100% / 2) - 15px);
+          position: relative;
+        }
+        .home-right-data-item-title {
+          @media (max-width: 767px) {
+            text-align: left;
+          }
+        }
+        .home-right-data-item-price {
+          @media (max-width: 767px) {
+            text-align: left !important;
+          }
+        }
+        .home-right-data-item-action {
+          @media (max-width: 767px) {
+            position: absolute;
+            top: 0%;
+            right: 0;
+            padding: 0;
+            width: auto;
+            //transform: translateY(-50%);
+            button {
+              background: none !important;
+              padding: 0;
+              line-height: 17px;
+            }
+          }
+        }
         .form-group {
           margin: 0;
           input {
@@ -282,4 +321,17 @@ ul {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.item-important a {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-red {
+  color: red !important;
 }

@@ -10,7 +10,7 @@ function Header(props) {
   };
   return (
     <div className="col-12 d-flex align-items-center justify-content-between pt-3">
-      <div className="col-2">
+      <div className="col-sm-2 col-7">
         <h1 className="m-0">
           <Link to="/">
             <img
@@ -20,7 +20,7 @@ function Header(props) {
           </Link>
         </h1>
       </div>
-      <div className="col-3 text-right">
+      <div className="col-sm-3 col-5 text-right">
         {props.master === "master" && (
           <Link
             className="text-decoration-none text-secondary"

@@ -12,8 +12,8 @@ function HomeLeftData() {
   const onClick = (e) => {
     const data = {
       id: e.target.attributes["data-id"].value,
-      title: e.target.attributes["data-title"].value,
-      image: e.target.attributes["data-image"].value,
+      //title: e.target.attributes["data-title"].value,
+      //image: e.target.attributes["data-image"].value,
       price: e.target.attributes["data-price"].value,
       url: e.target.attributes["data-url"].value,
     };

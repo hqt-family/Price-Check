@@ -12,20 +12,10 @@ const getPrices = asyncHandler(async (req, res) => {
 });
 
 const postPrice = asyncHandler(async (req, res) => {
-  const { id, title, image, price, url } = req.body;
+  const { id, price, url } = req.body;
   if (!id) {
     res.status(400);
     throw new Error("Missing productID");
-  }
-
-  if (!title) {
-    res.status(400);
-    throw new Error("Missing productTitle");
-  }
-
-  if (!image) {
-    res.status(400);
-    throw new Error("Missing productImage");
   }
 
   if (!price) {
@@ -41,12 +31,14 @@ const postPrice = asyncHandler(async (req, res) => {
   const priceExists = await Price.findOne({ productId: id });
 
   if (priceExists) {
+    if (price !== priceExists.productPrice) {
+      priceExists.productPrice = price;
+      priceExists.save();
+    }
     res.status(200).json(priceExists);
   } else {
     const postPrice = await Price.create({
       productId: id,
-      productTitle: title,
-      productImage: image,
       productPrice: price,
       productUrl: url,
       data: req.body.data,
@@ -310,7 +302,7 @@ const putPrice = asyncHandler(async (req, res) => {
           res.status(400);
           throw new Error("Không thể cập nhật giá của lg");
         }
-      } else if (data[i].link.includes("logitech")) {
+      } else if (data[i].link.includes("logitech.com")) {
         data[i] = await checkPrices.logitech(data[i].link);
         if (!data[i].price) {
           res.status(400);
@@ -328,8 +320,7 @@ const putPrice = asyncHandler(async (req, res) => {
           res.status(400);
           throw new Error("Không thể cập nhật giá của steelseries");
         }
-      }
-      else if (data[i].link.includes("fl-esports")) {
+      } else if (data[i].link.includes("fl-esports")) {
         data[i] = await checkPrices.flEsports(data[i].link);
         if (!data[i].price) {
           res.status(400);
@@ -358,6 +349,60 @@ const putPrice = asyncHandler(async (req, res) => {
         if (!data[i].price) {
           res.status(400);
           throw new Error("Không thể cập nhật giá của asus");
+        }
+      } else if (data[i].link.includes("tnc.com")) {
+        data[i] = await checkPrices.tnc(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của tnc");
+        }
+      } else if (data[i].link.includes("haianh.vn")) {
+        data[i] = await checkPrices.haianh(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của haianh");
+        }
+      } else if (data[i].link.includes("gearshop.vn")) {
+        data[i] = await checkPrices.gearshop(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của gearshop");
+        }
+      } else if (data[i].link.includes("azaudio.vn")) {
+        data[i] = await checkPrices.azaudio(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của azaudio");
+        }
+      } else if (data[i].link.includes("mixicomputer.vn")) {
+        data[i] = await checkPrices.mixicomputer(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của mixicomputer");
+        }
+      } else if (data[i].link.includes("combatgaming.vn")) {
+        data[i] = await checkPrices.combatgaming(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của combatgaming");
+        }
+      } else if (data[i].link.includes("hoangphatvn.vn")) {
+        data[i] = await checkPrices.hoangphatvn(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của hoangphatvn");
+        }
+      } else if (data[i].link.includes("saigongear.vn")) {
+        data[i] = await checkPrices.saigongear(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của saigongear");
+        }
+      } else if (data[i].link.includes("fptshop.com")) {
+        data[i] = await checkPrices.fptshop(data[i].link);
+        if (!data[i].price) {
+          res.status(400);
+          throw new Error("Không thể cập nhật giá của fptshop");
         }
       }
       // }  else if (data[i].link.includes("nguyenvu")) {

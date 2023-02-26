@@ -28,10 +28,10 @@ function Dashboard() {
         master={user && user.permission}
       />
       <div className="col-md-12 row home">
-        <div className="col-md-6">
+        <div className="col-md-12">
           <HomeLeft />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <HomeRight />
         </div>
       </div>

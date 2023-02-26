@@ -19,7 +19,7 @@ const getProducts = asyncHandler(async (req, res) => {
 const getProductsByTitle = asyncHandler(async (req, res) => {
   const keywords = req.query.keywords;
   const response = await axios.get(
-    `https://apis.haravan.com/com/products.json?title=${keywords}&limit=5`,
+    `https://apis.haravan.com/com/products.json?title=${keywords}&limit=1`,
     {
       headers: {
         "Content-Type": "application/json",

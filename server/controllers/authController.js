@@ -53,8 +53,6 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Vui lòng kiểm tra lại dữ liệu người dùng");
   }
-
-  res.json({ message: "Đăng ký tài khoản thành công" });
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -72,7 +70,7 @@ const loginUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400);
-    throw new Error("Sai name hoặc mật khẩu, vui lòng kiểm tra lại");
+    throw new Error("Sai tên hoặc mật khẩu, vui lòng kiểm tra lại");
   }
 
   res.status(200).json({ message: "Đăng nhập thành công" });

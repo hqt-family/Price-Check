@@ -130,7 +130,6 @@ const mega = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -150,7 +149,6 @@ const kccshop = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -170,7 +168,6 @@ const tncstore = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -190,7 +187,6 @@ const npcshop = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -209,7 +205,6 @@ const khoavang = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -231,7 +226,6 @@ const songphuong = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -252,7 +246,6 @@ const tplab = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -273,7 +266,6 @@ const gland = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -294,7 +286,6 @@ const memoryzone = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -314,7 +305,6 @@ const hacom = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -335,7 +325,6 @@ const tinhocngoisao = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -356,7 +345,6 @@ const myboss = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -376,7 +364,6 @@ const minhancomputer = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -396,7 +383,6 @@ const sieuthimaychu = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -416,7 +402,6 @@ const maytinhbinhduong = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -436,7 +421,6 @@ const ankhang = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -456,7 +440,6 @@ const phongvu = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -476,7 +459,6 @@ const anphatpc = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -496,7 +478,6 @@ const xgear = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -517,7 +498,6 @@ const playzone = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -538,7 +518,6 @@ const dergo = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -558,7 +537,6 @@ const ergonomic = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -578,7 +556,6 @@ const themanson = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -598,7 +575,6 @@ const akko = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -618,7 +594,6 @@ const owlgaming = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -639,7 +614,6 @@ const tmins = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -661,7 +635,6 @@ const tanthanhdanh = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -682,7 +655,6 @@ const hotgear = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -703,7 +675,6 @@ const satech = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -722,7 +693,6 @@ const bpstore = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -746,7 +716,6 @@ const hangchinhhieu = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -767,7 +736,6 @@ const soigear = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -787,7 +755,6 @@ const kicap = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -807,7 +774,6 @@ const khanhhan = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -824,7 +790,7 @@ const lg = async (link) => {
         brand: "lg",
         price,
         link,
-        important: true,
+        important: "/brands/lg-logo.png",
       };
     }
   } catch (error) {
@@ -848,7 +814,6 @@ const thegioigear = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -868,7 +833,6 @@ const banghechoigame = async (link) => {
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -885,11 +849,10 @@ const logitech = async (link) => {
         brand: "logitech",
         price,
         link,
-        important: true,
+        important: "/brands/logitech-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -907,11 +870,10 @@ const razer = async (link) => {
         brand: "razer",
         price,
         link,
-        important: true,
+        important: "/brands/razer-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -928,11 +890,10 @@ const steelseries = async (link) => {
         brand: "steelseries",
         price,
         link,
-        important: true,
+        important: "/brands/steelseries-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -949,11 +910,10 @@ const nzxt = async (link) => {
         brand: "nzxt",
         price,
         link,
-        important: true,
+        important: "/brands/nzxt-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -970,11 +930,10 @@ const asus = async (link) => {
         brand: "asus",
         price,
         link,
-        important: true,
+        important: "/brands/asus-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -991,11 +950,10 @@ const flEsports = async (link) => {
         brand: "fl-esports",
         price,
         link,
-        important: true,
+        important: "/brands/fl-esports.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -1012,11 +970,10 @@ const akkogear = async (link) => {
         brand: "akkogear",
         price,
         link,
-        important: true,
+        important: "/brands/akkogear-logo.png",
       };
     }
   } catch (error) {
-    
     return error;
   }
 };
@@ -1034,11 +991,182 @@ const edravn = async (link) => {
         brand: "edravn",
         price,
         link,
-        important: true,
+        important: "/brands/edra-logo.png",
       };
     }
   } catch (error) {
-    
+    return error;
+  }
+};
+
+const tnc = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($(".box-price .price").text()) || null;
+      return {
+        brand: "tnc",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const haianh = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($(".bk-product-price").text()) || null;
+      return {
+        brand: "haianh",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const mixicomputer = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($(".bk-product-price").text()) || null;
+      return {
+        brand: "mixicomputer",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const azaudio = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($(".product-price .price").text()) || null;
+      return {
+        brand: "azaudio",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const gearshop = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price =
+        replaceToNumber($('[itemprop="offers"] .amount').text()) || null;
+      return {
+        brand: "gearshop",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const combatgaming = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price =
+        replaceToNumber($("#product-detail .product-price").text()) || null;
+      return {
+        brand: "combatgaming",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const hoangphatvn = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($("#product-price-holder").text()) || null;
+      return {
+        brand: "hoangphatvn",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const saigongear = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($("#product_info .price").text()) || null;
+      return {
+        brand: "saigongear",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+const fptshop = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      const obj = $("script");
+      for (var i in obj) {
+        for (var j in obj[i].children) {
+          var text = obj[i].children[j].data;
+          console.log(text);
+          if (text && text.includes("currency") && text.includes("product")) {
+          }
+        }
+      }
+      // return {
+      //   brand: "fptshop",
+      //   price,
+      //   link,
+      // };
+    }
+  } catch (error) {
     return error;
   }
 };
@@ -1092,12 +1220,15 @@ const checkPrices = {
   akkogear,
   edravn,
   nzxt,
-  asus
+  asus,
+  tnc,
+  haianh,
+  gearshop,
+  azaudio,
+  mixicomputer,
+  combatgaming,
+  hoangphatvn,
+  saigongear,
+  fptshop,
 };
 module.exports = checkPrices;
-
-// var price = checkOffers($('[type="application/ld+json"]'), "price") || null;
-
-// var price = replaceToNumber($('[property="og:price:amount"]').attr("content")) || null;
-
-// $(".p-detail-price-wrap .p-detail-price").text()

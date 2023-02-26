@@ -48,7 +48,7 @@ function HomeRightData(props) {
             )}
           </div>
           {authExits && JSON.parse(authExits).permission !== "member" && (
-            <button type="submit" className="btn home-right-data-top-title">
+            <button type="submit" className="btn btn-primary home-right-data-top-title">
               <i className="fa fa-spinner"></i> Cập nhật
             </button>
           )}

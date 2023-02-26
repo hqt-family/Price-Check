@@ -1098,3 +1098,9 @@ const checkPrices = {
   asus
 };
 module.exports = checkPrices;
+
+// var price = checkOffers($('[type="application/ld+json"]'), "price") || null;
+
+// var price = replaceToNumber($('[property="og:price:amount"]').attr("content")) || null;
+
+// $(".p-detail-price-wrap .p-detail-price").text()

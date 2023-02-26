@@ -10,12 +10,20 @@ function HomeRightDataYes(props) {
           </a>
         </div>
         <div className="col-5 text-right">
-          {props.price && !String(props.price).includes("$")
-            ? props.price
+          {props.price ? (
+            !String(props.price).includes("$") ? (
+              props.price
                 .toLocaleString("it-IT", { style: "currency", currency: "VND" })
                 .replace(/\sVND/g, "₫")
-            : props.price
-                .toLocaleString("en-US", { style: "currency", currency: "USD" })}
+            ) : (
+              props.price.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })
+            )
+          ) : (
+            <></>
+          )}
         </div>
         <div className="col-2 text-right">
           <button

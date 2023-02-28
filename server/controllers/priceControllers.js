@@ -461,6 +461,371 @@ const putPrice = asyncHandler(async (req, res) => {
   res.status(200).json(updatePrice);
 });
 
+const putSingle = asyncHandler(async (req, res) => {
+  const { id, link, stt } = req.body;
+  console.log(id, link, stt);
+  const updatePrice = await Price.findOne({ productId: id });
+  updatePrice.data[stt].link = link;
+  const data = updatePrice.data;
+  await updatePrice.save();
+  // Xử lý data
+  if (data[stt].link) {
+    if (data[stt].link.includes("cellphones")) {
+      data[stt] = await checkPrices.cellphones(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của cellphones");
+      }
+    } else if (data[stt].link.includes("gearvn")) {
+      data[stt] = await checkPrices.gearvn(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của gearvn");
+      }
+    } else if (data[stt].link.includes("phucanh")) {
+      data[stt] = await checkPrices.phucanh(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của phucanh");
+      }
+    } else if (data[stt].link.includes("nguyencongpc")) {
+      data[stt] = await checkPrices.nguyencongpc(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của nguyencongpc");
+      }
+    } else if (data[stt].link.includes("mega")) {
+      data[stt] = await checkPrices.mega(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của mega");
+      }
+    } else if (data[stt].link.includes("kccshop")) {
+      data[stt] = await checkPrices.kccshop(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của kccshop");
+      }
+    } else if (data[stt].link.includes("tncstore")) {
+      data[stt] = await checkPrices.tncstore(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tncstore");
+      }
+    } else if (data[stt].link.includes("npcshop")) {
+      data[stt] = await checkPrices.npcshop(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của npcshop");
+      }
+    } else if (data[stt].link.includes("khoavang")) {
+      data[stt] = await checkPrices.khoavang(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của khoavang");
+      }
+    } else if (data[stt].link.includes("myboss")) {
+      data[stt] = await checkPrices.myboss(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của myboss");
+      }
+    } else if (data[stt].link.includes("minhancomputer")) {
+      data[stt] = await checkPrices.minhancomputer(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của minhancomputer");
+      }
+    } else if (data[stt].link.includes("ankhang")) {
+      data[stt] = await checkPrices.ankhang(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của ankhang");
+      }
+    } else if (data[stt].link.includes("songphuong")) {
+      data[stt] = await checkPrices.songphuong(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của songphuong");
+      }
+    } else if (data[stt].link.includes("tplab")) {
+      data[stt] = await checkPrices.tplab(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tplab");
+      }
+    } else if (data[stt].link.includes("gland")) {
+      data[stt] = await checkPrices.gland(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của gland");
+      }
+    } else if (data[stt].link.includes("sieuthimaychu")) {
+      data[stt] = await checkPrices.sieuthimaychu(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của sieuthimaychu");
+      }
+    } else if (data[stt].link.includes("maytinhbinhduong")) {
+      data[stt] = await checkPrices.maytinhbinhduong(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của maytinhbinhduong");
+      }
+    } else if (data[stt].link.includes("memoryzone")) {
+      data[stt] = await checkPrices.memoryzone(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của memoryzone");
+      }
+    } else if (data[stt].link.includes("tinhocngoisao")) {
+      data[stt] = await checkPrices.tinhocngoisao(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tinhocngoisao");
+      }
+    } else if (data[stt].link.includes("hacom")) {
+      data[stt] = await checkPrices.hacom(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của hacom");
+      }
+    } else if (data[stt].link.includes("phongvu")) {
+      data[stt] = await checkPrices.phongvu(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của phongvu");
+      }
+    } else if (data[stt].link.includes("anphatpc")) {
+      data[stt] = await checkPrices.anphatpc(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của anphatpc");
+      }
+    } else if (data[stt].link.includes("xgear")) {
+      data[stt] = await checkPrices.xgear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của xgear");
+      }
+    } else if (data[stt].link.includes("playzone")) {
+      data[stt] = await checkPrices.playzone(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của playzone");
+      }
+    } else if (data[stt].link.includes("dergo")) {
+      data[stt] = await checkPrices.dergo(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của dergo");
+      }
+    } else if (data[stt].link.includes("themanson")) {
+      data[stt] = await checkPrices.themanson(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của themanson");
+      }
+    } else if (data[stt].link.includes("ergonomic")) {
+      data[stt] = await checkPrices.ergonomic(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của ergonomic");
+      }
+    } else if (data[stt].link.includes("akko.com")) {
+      data[stt] = await checkPrices.akko(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của akko");
+      }
+    } else if (data[stt].link.includes("owlgaming")) {
+      data[stt] = await checkPrices.owlgaming(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của owlgaming");
+      }
+    } else if (data[stt].link.includes("tmins")) {
+      data[stt] = await checkPrices.tmins(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tmins");
+      }
+    } else if (data[stt].link.includes("tanthanhdanh")) {
+      data[stt] = await checkPrices.tanthanhdanh(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tanthanhdanh");
+      }
+    } else if (data[stt].link.includes("hotgear")) {
+      data[stt] = await checkPrices.hotgear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của hotgear");
+      }
+    } else if (data[stt].link.includes("satech")) {
+      data[stt] = await checkPrices.satech(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của satech");
+      }
+    } else if (data[stt].link.includes("bpstore")) {
+      data[stt] = await checkPrices.bpstore(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của bpstore");
+      }
+    } else if (data[stt].link.includes("hangchinhhieu")) {
+      data[stt] = await checkPrices.hangchinhhieu(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của hangchinhhieu");
+      }
+    } else if (data[stt].link.includes("soigear")) {
+      data[stt] = await checkPrices.soigear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của soigear");
+      }
+    } else if (data[stt].link.includes("kicap")) {
+      data[stt] = await checkPrices.kicap(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của kicap");
+      }
+    } else if (data[stt].link.includes("thegioigear")) {
+      data[stt] = await checkPrices.thegioigear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của thegioigear");
+      }
+    } else if (data[stt].link.includes("khanhhan")) {
+      data[stt] = await checkPrices.khanhhan(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của khanhhan");
+      }
+    } else if (data[stt].link.includes("banghechoigame")) {
+      data[stt] = await checkPrices.banghechoigame(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của banghechoigame");
+      }
+    } else if (data[stt].link.includes("lg")) {
+      data[stt] = await checkPrices.lg(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của lg");
+      }
+    } else if (data[stt].link.includes("logitech.com")) {
+      data[stt] = await checkPrices.logitech(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của logitech");
+      }
+    } else if (data[stt].link.includes("razer")) {
+      data[stt] = await checkPrices.razer(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của razer");
+      }
+    } else if (data[stt].link.includes("steelseries")) {
+      data[stt] = await checkPrices.steelseries(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của steelseries");
+      }
+    } else if (data[stt].link.includes("fl-esports")) {
+      data[stt] = await checkPrices.flEsports(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của fl-esports");
+      }
+    } else if (data[stt].link.includes("akkogear")) {
+      data[stt] = await checkPrices.akkogear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của akkogear");
+      }
+    } else if (data[stt].link.includes("edravn")) {
+      data[stt] = await checkPrices.edravn(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của edravn");
+      }
+    } else if (data[stt].link.includes("nzxt")) {
+      data[stt] = await checkPrices.nzxt(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của nzxt");
+      }
+    } else if (data[stt].link.includes("asus.com")) {
+      data[stt] = await checkPrices.asus(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của asus");
+      }
+    } else if (data[stt].link.includes("tnc.com")) {
+      data[stt] = await checkPrices.tnc(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của tnc");
+      }
+    } else if (data[stt].link.includes("haianh.vn")) {
+      data[stt] = await checkPrices.haianh(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của haianh");
+      }
+    } else if (data[stt].link.includes("gearshop.vn")) {
+      data[stt] = await checkPrices.gearshop(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của gearshop");
+      }
+    } else if (data[stt].link.includes("azaudio.vn")) {
+      data[stt] = await checkPrices.azaudio(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của azaudio");
+      }
+    } else if (data[stt].link.includes("mixicomputer.vn")) {
+      data[stt] = await checkPrices.mixicomputer(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của mixicomputer");
+      }
+    } else if (data[stt].link.includes("combatgaming.vn")) {
+      data[stt] = await checkPrices.combatgaming(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của combatgaming");
+      }
+    } else if (data[stt].link.includes("hoangphatvn.vn")) {
+      data[stt] = await checkPrices.hoangphatvn(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của hoangphatvn");
+      }
+    } else if (data[stt].link.includes("saigongear.vn")) {
+      data[stt] = await checkPrices.saigongear(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của saigongear");
+      }
+    } else if (data[stt].link.includes("fptshop.com")) {
+      data[stt] = await checkPrices.fptshop(data[stt].link);
+      if (!data[stt].price) {
+        res.status(400);
+        throw new Error("Không thể cập nhật giá của fptshop");
+      }
+    }
+  }
+  var dataSort = data.sort(({ price: a }, { price: b }) => a - b);
+  updatePrice.data = dataSort;
+  await updatePrice.save();
+  res.status(200).json(updatePrice);
+});
+
 const deletePrice = asyncHandler(async (req, res) => {
   const deletePrice = await Price.findByIdAndDelete(req.params.id);
   res.status(200).json({ id: req.params.id });
@@ -470,5 +835,6 @@ module.exports = {
   getPrices,
   postPrice,
   putPrice,
+  putSingle,
   deletePrice,
 };

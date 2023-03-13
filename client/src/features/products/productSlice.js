@@ -3,32 +3,16 @@ import productServices from './productService';
 
 const initialState = {
   products: null,
-  isError: false,
-  message: "",
+  isLoadingProduct: false,
+  isErrorProduct: false,
+  messageProduct: "",
 }
 
-export const getAll = createAsyncThunk(
+export const getProducts = createAsyncThunk(
   'products/all',
   async (data, thunkAPI) => {
     try {
-      return await productServices.getAll(data)
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-)
-
-export const getFilter = createAsyncThunk(
-  'products/filter',
-  async (data, thunkAPI) => {
-    try {
-      return await productServices.getFilter(data)
+      return await productServices.call_apiProduct(data)
     } catch (error) {
       const message =
         (error.response &&
@@ -46,39 +30,25 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      state.isError = false;
+      state.isLoadingProduct = false;
+      state.isErrorProduct = false;
       state.message = "";
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAll.pending, (state) => {
-        state.isLoading = true;
+      .addCase(getProducts.pending, (state) => {
+        state.isLoadingProduct = true;
       })
-      .addCase(getAll.fulfilled, (state, action) => {
-        state.isLoading = false;
+      .addCase(getProducts.fulfilled, (state, action) => {
+        state.isLoadingProduct = false;
         state.isSuccess = true;
         state.products = action.payload;
       })
-      .addCase(getAll.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
-        state.products = null;
-      })
-      .addCase(getFilter.pending, (state) => {
-        state.isLoading = true;
-        state.products = null;
-      })
-      .addCase(getFilter.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.products = action.payload;
-      })
-      .addCase(getFilter.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
+      .addCase(getProducts.rejected, (state, action) => {
+        state.isLoadingProduct = false;
+        state.isErrorProduct = true;
+        state.messageProduct = action.payload;
         state.products = null;
       })
   },

@@ -12,11 +12,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors()); 
 
 app.use('/brands/', express.static(path.join(__dirname,'../client/public/brands')));
 
-app.use("/api/products", require("./routes/productRoute"));
+app.use("/embed/products", require("./routes/productRoute"));
 app.use("/api/prices", require("./routes/priceRoute"));
 app.use("/api/user", require("./routes/authRoute"));
 

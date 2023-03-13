@@ -1,20 +1,15 @@
 import axios from "axios";
 
-const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/products/";
+const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/embed/products/";
 
-const getAll = async (options) => {
-  const response = await axios.get(API_URL + "all", { params: options });
+const call_apiProduct = async (options) => {
+  const response = await axios.get(API_URL, { params: options });
   return response.data;
 };
 
-const getFilter = async (options) => {
-  const response = await axios.get(API_URL + "filter", { params: options });
-  return response.data;
-};
 
 const productServices = {
-  getAll,
-  getFilter,
+  call_apiProduct
 };
 
 export default productServices;

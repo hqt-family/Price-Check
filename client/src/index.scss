@@ -17,6 +17,10 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
+button {
+  outline: none !important;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -54,6 +58,46 @@ ul {
   }
 }
 
+.home {
+  background-color: #efefef;
+  .home-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .home-body {
+    padding: 15px;
+    .home-body-wrap {
+      display: flex;
+      .home-body-search {
+        display: flex;
+        background: #fff;
+        padding: 15px;
+      }
+      .home-body-price {
+        display: flex;
+        background: #fff;
+        padding: 15px;
+        .home-body-price-head {
+          text-align: center;
+          padding: 0 0 15px;
+          box-shadow: inset 0 -1px 0 rgba(38, 50, 56, 0.1);
+          .home-body-price-head-main {
+            box-shadow: inset -1px 0 0 rgba(38, 50, 56, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.oneLine {
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
 .boxContainer {
   padding: 15px;
   background-color: #fff;
@@ -65,249 +109,16 @@ ul {
   font-size: 1.5rem;
 }
 
-.home {
-  padding: 30px 15px;
-  margin: 0;
-  @media (max-width: 767px) {
-    padding: 15px 0;
-  }
-  .home-left {
-    padding: 15px;
-    background-color: #fff;
-    .home-left-search {
-      strong {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 1.5rem;
-      }
-      form {
-        input {
-          outline: 0;
-          box-shadow: none;
-        }
-      }
-    }
-    .home-left-data {
-      li {
-        &:not(:last-child) {
-          border-top: 1px solid #efefef;
-        }
-        &:last-child {
-          padding-bottom: 0;
-        }
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 10px 0;
-        img {
-          width: 50px;
-          border: 1px solid #efefef;
-          padding: 4px;
-          border-radius: 5px;
-        }
-        h3 {
-          display: block;
-          width: calc(100% - 170px);
-          padding: 0 15px;
-          font-size: 1rem;
-          margin: 0;
-        }
-        button {
-          width: 100px;
-          margin-left: auto;
-          background-color: #fff;
-          border: 1px solid #dbdbdb;
-          border-radius: 5px;
-          cursor: pointer;
-          outline: 0;
-          &:hover {
-            background-color: #efefef;
-          }
-          i {
-            font-size: 12px;
-          }
-        }
-      }
-    }
-    .home-left-paginate {
-      padding-top: 10px;
-      border-top: 1px solid #efefef;
-      text-align: right;
-      button {
-        width: 25px;
-        height: 25px;
-        display: inline-flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-left: auto;
-        background-color: #fff;
-        border: 1px solid #dbdbdb;
-        border-radius: 5px;
-        cursor: pointer;
-        outline: 0;
-        &#home-left-paginate-previous {
-          margin-right: 10px;
-        }
-        &:hover {
-          background-color: #efefef;
-        }
-        i {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-  .home-right {
-    margin-top: 30px;
-    @media (max-width: 767px) {
-      margin-top: 15px;
-    }
-    .home-right-head {
-      padding: 15px;
-      background-color: #fff;
-      // margin-bottom: 30px;
-      // @media (max-width: 767px) {
-      //   margin-bottom: 15px;
-      // }
-      strong {
-        color: red;
-      }
-      p {
-        margin-bottom: 0;
-        text-align: center;
-        color: red;
-      }
-      a {
-        color: #333;
-        font-size: 20px;
-      }
-    }
-    .home-right-data {
-      padding: 15px;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      .home-right-data-top {
-        padding-bottom: 15px;
-        border-bottom: 1px solid #dbdbdb;
-        .home-right-data-top-title {
-          strong {
-            color: red;
-          }
-        }
-      }
-      .home-right-data-item {
-        width: calc((100% / 3) - 15px);
-        margin: 0;
-        @media (max-width: 767px) {
-          width: calc((100% / 2) - 15px);
-          position: relative;
-        }
-        .home-right-data-item-title {
-          @media (max-width: 767px) {
-            text-align: left;
-          }
-        }
-        .home-right-data-item-price {
-          @media (max-width: 767px) {
-            text-align: left !important;
-          }
-        }
-        .home-right-data-item-action {
-          @media (max-width: 767px) {
-            position: absolute;
-            top: 0%;
-            right: 0;
-            padding: 0;
-            width: auto;
-            //transform: translateY(-50%);
-            button {
-              background: none !important;
-              padding: 0;
-              line-height: 17px;
-            }
-          }
-        }
-        .form-group {
-          margin: 0;
-          input {
-            width: 100%;
-            margin: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
 .pageLogin {
   max-width: 375px;
-  height: 100vh;
+  height: calc(100vh - 30px);
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
   margin: 0 auto;
-  .heading {
-    width: 100%;
-    text-align: center;
-    h1 {
-      text-transform: uppercase;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    img {
-      margin-bottom: 15px;
-    }
-    p {
-      font-size: 11px;
-      color: red;
-    }
-  }
-  .form {
-    width: 100%;
-    input,
-    button {
-      width: 100%;
-    }
-    .btn {
-      padding: 10px 20px;
-      border: 1px solid #000;
-      border-radius: 5px;
-      background: #000;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      appearance: button;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn svg {
-      margin-right: 8px;
-    }
-
-    .btn-reverse {
-      background: #fff;
-      color: #000;
-    }
-
-    .btn-block {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    .btn:hover {
-      transform: scale(0.98);
-    }
-  }
 }
 
 .logOut {

@@ -3,10 +3,10 @@ import priceServices from "./priceService";
 
 const initialState = {
   prices: null,
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  message: "",
+  isErrorPrice: false,
+  isSuccessPrice: false,
+  isLoadingPrice: false,
+  messagePrice: "",
 };
 
 export const createPrices = createAsyncThunk(
@@ -49,52 +49,53 @@ export const priceSlice = createSlice({
   name: "price",
   initialState,
   reducers: {
-    reset: (state) => {
-      state.isError = false;
-      state.isSuccess = false;
-      state.isLoading = false;
-      state.message = "";
+    resetPrice: (state) => {
+      state.isErrorPrice = false;
+      state.isSuccessPrice = false;
+      state.isLoadingPrice = false;
+      state.messagePrice = "";
+      state.prices = null;
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(createPrices.pending, (state) => {
-        state.isLoading = true;
+        state.isLoadingPrice = true;
       })
       .addCase(createPrices.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
+        state.isLoadingPrice = false;
+        state.isSuccessPrice = true;
         state.prices = action.payload;
       })
       .addCase(createPrices.rejected, (state, action) => {
-        state.isLoading = true;
-        state.isError = true;
-        state.message = action.payload;
+        state.isLoadingPrice = true;
+        state.isErrorPrice = true;
+        state.messagePrice = action.payload;
         state.prices = null;
       })
       .addCase(updatePrices.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-        state.isSuccess = false;
-        state.message = "";
+        state.isLoadingPrice = true;
+        state.isErrorPrice = false;
+        state.isSuccessPrice = false;
+        state.messagePrice = "";
         state.prices = null;
       })
       .addCase(updatePrices.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isError = false;
-        state.message = "";
-        state.isSuccess = true;
+        state.isLoadingPrice = false;
+        state.isErrorPrice = false;
+        state.messagePrice = "";
+        state.isSuccessPrice = true;
         state.prices = action.payload;
       })
       .addCase(updatePrices.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
-        state.isSuccess = false;
+        state.isLoadingPrice = false;
+        state.isErrorPrice = true;
+        state.messagePrice = action.payload;
+        state.isSuccessPrice = false;
         state.prices = null;
       });
   },
 });
 
-export const { reset } = priceSlice.actions;
+export const { resetPrice } = priceSlice.actions;
 export default priceSlice.reducer;

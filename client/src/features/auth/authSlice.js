@@ -5,11 +5,11 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
   user: user ? user : null,
-  isError: false,
-  isSuccess: false,
-  isLoading: false,
-  message: "",
-  all: null,
+  isErrorUser: false,
+  isSuccessUser: false,
+  isLoadingUser: false,
+  messageUser: "",
+  allUser: null,
 };
 
 export const get = createAsyncThunk(
@@ -62,58 +62,58 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      state.isError = false;
-      state.isSuccess = false;
-      state.isLoading = false;
-      state.message = "";
+      state.isErrorUser = false;
+      state.isSuccessUser = false;
+      state.isLoadingUser = false;
+      state.messageUser = "";
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
-        state.isLoading = true;
+        state.isLoadingUser = true;
       })
       .addCase(login.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
+        state.isLoadingUser = false;
+        state.isSuccessUser = true;
         state.user = action.payload;
       })
       .addCase(login.rejected, (state, action) => {
-        state.isLoading = true;
-        state.isError = true;
-        state.message = action.payload;
+        state.isLoadingUser = true;
+        state.isErrorUser = true;
+        state.messageUser = action.payload;
         state.user = null;
       })
       .addCase(get.pending, (state) => {
-        state.isLoading = true;
+        state.isLoadingUser = true;
       })
       .addCase(get.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.all = action.payload;
+        state.isLoadingUser = false;
+        state.isSuccessUser = true;
+        state.allUser = action.payload;
       })
       .addCase(get.rejected, (state, action) => {
-        state.isLoading = true;
-        state.isError = true;
-        state.message = action.payload;
-        state.all = null;
+        state.isLoadingUser = true;
+        state.isErrorUser = true;
+        state.messageUser = action.payload;
+        state.allUser = null;
       }).addCase(update.pending, (state) => {
-        state.isLoading = true;
+        state.isLoadingUser = true;
       })
       .addCase(update.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.all = action.payload;
+        state.isLoadingUser = false;
+        state.isSuccessUser = true;
+        state.allUser = action.payload;
       })
       .addCase(update.rejected, (state, action) => {
-        state.isLoading = true;
-        state.isError = true;
-        state.message = action.payload;
-        state.all = null;
+        state.isLoadingUser = true;
+        state.isErrorUser = true;
+        state.messageUser = action.payload;
+        state.allUser = null;
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
-        state.all = null;
+        state.allUser = null;
       })
   },
 });

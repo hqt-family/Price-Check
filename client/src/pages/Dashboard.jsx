@@ -1,41 +1,73 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import HomeLeft from "../components/HomeLeft/HomeLeft";
-import HomeRight from "../components/HomeRight/HomeRight";
+import SearchForm from "../components/Search/SearchForm";
+
+import { getProducts } from "../features/products/productSlice";
+import SearchData from "../components/Search/SearchData";
+
+import { Space } from "antd";
+import Spinner from "../components/Spinner";
+
+import PriceHead from "../components/Price/PriceHead";
+import PriceData from "../components/Price/PriceData";
+import { resetPrice } from "../features/prices/priceSlice";
 
 function Dashboard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user, isSuccess, isError, message } = useSelector(
-    (state) => state.auth
+
+  const [valueSearch, setValueSearch] = useState("");
+
+  const { products, isLoadingProduct, isErrorProduct, messageProduct } =
+    useSelector((state) => state.products);
+  const { prices, isLoadingPrice, isErrorPrice, messagePrice } = useSelector(
+    (state) => state.prices
   );
+
   useEffect(() => {
-    if (isError) {
-      toast.error(message);
+    if (isErrorPrice) {
+      toast.error(messagePrice);
     }
-    if (!user) {
-      navigate("/login");
-    }
-  }, [isError, isSuccess, user, navigate, dispatch, message]);
+
+    const timeOutId = setTimeout(() => {
+      if (isErrorProduct) {
+        toast.error(messageProduct);
+      }
+      if (valueSearch !== "") {
+        dispatch(getProducts({ keywords: valueSearch }));
+        dispatch(resetPrice());
+      }
+    }, 750);
+    return () => clearTimeout(timeOutId);
+  }, [
+    isErrorPrice,
+    messagePrice,
+    isErrorProduct,
+    messageProduct,
+    navigate,
+    dispatch,
+    valueSearch,
+  ]);
+
+  if (isLoadingProduct || isLoadingPrice) {
+    return <Spinner />;
+  }
+
   return (
-    <>
-      <Header
-        navigate="/users"
-        navigateText="Quản lý tài khoản"
-        master={user && user.permission}
-      />
-      <div className="col-md-12 row home">
-        <div className="col-md-12">
-          <HomeLeft />
-        </div>
-        <div className="col-md-12">
-          <HomeRight />
-        </div>
-      </div>
-    </>
+    <Space direction="vertical" size={15} className="home-body-wrap">
+      <Space direction="vertical" size={15} className="home-body-search">
+        <SearchForm valueSearch={valueSearch} setValueSearch={setValueSearch} />
+        <SearchData products={products} />
+      </Space>
+      {prices && (
+        <Space direction="vertical" size={15} className="home-body-price">
+          <PriceHead prices={prices} />
+          <PriceData prices={prices} />
+        </Space>
+      )}
+    </Space>
   );
 }
 

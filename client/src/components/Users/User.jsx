@@ -22,11 +22,11 @@ function User(props) {
   };
   return (
     <li className="py-2 row d-flex align-items-center">
-      <div className="col-2">{member.name}</div>
+      <div className="col-5 col-sm-2">{member.name}</div>
       <div className="form-group m-0 col-7">
         <select
           data-id={member._id}
-          className="ml-3 form-control"
+          className="form-control"
           defaultValue={user.permission || member.permission}
           onChange={(e) => onChange(e)}
         >

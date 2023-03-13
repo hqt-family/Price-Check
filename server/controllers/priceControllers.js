@@ -68,356 +68,188 @@ const putPrice = asyncHandler(async (req, res) => {
   await updatePrice.save();
   // Xử lý data
   for (i in data) {
-    if (data[i].link) {
-      if (data[i].link.includes("cellphones")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.cellphones(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("gearvn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.gearvn(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("phucanh")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.phucanh(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("nguyencongpc")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.nguyencongpc(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("mega")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.mega(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("kccshop")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.kccshop(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tncstore")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tncstore(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("npcshop")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.npcshop(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("khoavang")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.khoavang(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("myboss")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.myboss(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("minhancomputer")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.minhancomputer(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("ankhang")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.ankhang(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("songphuong")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.songphuong(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tplab")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tplab(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("gland")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.gland(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("sieuthimaychu")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.sieuthimaychu(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("maytinhbinhduong")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.maytinhbinhduong(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("memoryzone")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.memoryzone(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tinhocngoisao")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tinhocngoisao(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("hacom")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.hacom(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("phongvu")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.phongvu(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("anphatpc")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.anphatpc(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("xgear")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.xgear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("playzone")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.playzone(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("dergo")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.dergo(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("themanson")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.themanson(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("ergonomic")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.ergonomic(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("akko.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.akko(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("owlgaming")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.owlgaming(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tmins")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tmins(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tanthanhdanh")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tanthanhdanh(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("hotgear")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.hotgear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("satech")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.satech(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("bpstore")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.bpstore(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("hangchinhhieu")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.hangchinhhieu(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("soigear")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.soigear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("kicap")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.kicap(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("thegioigear")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.thegioigear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("khanhhan")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.khanhhan(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("banghechoigame")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.banghechoigame(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("lg.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.lg(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("logitech.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.logitech(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("razer")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.razer(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("steelseries")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.steelseries(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("fl-esports")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.flEsports(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("akkogear")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.akkogear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("edravn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.edravn(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("nzxt")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.nzxt(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("asus.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.asus(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("tnc.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.tnc(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("haianh.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.haianh(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("gearshop.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.gearshop(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("azaudio.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.azaudio(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("mixicomputer.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.mixicomputer(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("combatgaming.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.combatgaming(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("hoangphatvn.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.hoangphatvn(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("saigongear.vn")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.saigongear(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
-      } else if (data[i].link.includes("fptshop.com")) {
-        let flagLink = data[i].link;
-        data[i] = await checkPrices.fptshop(flagLink);
-        if (!data[i].price) {
-          data[i] = { link: flagLink };
-        }
+    if (data[i] && Object.keys(data[i]).length !== 0) {
+      const link = data[i].link || "";
+      switch (true) {
+        case link.includes("cellphones"):
+          data[i] = (await checkPrices.cellphones(link)) || { link };
+          break;
+        case link.includes("gearvn"):
+          data[i] = (await checkPrices.gearvn(link)) || { link };
+          break;
+        case link.includes("phucanh"):
+          data[i] = (await checkPrices.phucanh(link)) || { link };
+          break;
+        case link.includes("nguyencongpc"):
+          data[i] = (await checkPrices.nguyencongpc(link)) || { link };
+          break;
+        case link.includes("mega"):
+          data[i] = (await checkPrices.mega(link)) || { link };
+          break;
+        case link.includes("kccshop"):
+          data[i] = (await checkPrices.kccshop(link)) || { link };
+          break;
+        case link.includes("tncstore"):
+          data[i] = (await checkPrices.tncstore(link)) || { link };
+          break;
+        case link.includes("npcshop"):
+          data[i] = (await checkPrices.npcshop(link)) || { link };
+          break;
+        case link.includes("khoavang"):
+          data[i] = (await checkPrices.khoavang(link)) || { link };
+          break;
+        case link.includes("myboss"):
+          data[i] = (await checkPrices.myboss(link)) || { link };
+          break;
+        case link.includes("minhancomputer"):
+          data[i] = (await checkPrices.minhancomputer(link)) || { link };
+          break;
+        case link.includes("ankhang"):
+          data[i] = (await checkPrices.ankhang(link)) || { link };
+          break;
+        case link.includes("songphuong"):
+          data[i] = (await checkPrices.songphuong(link)) || { link };
+          break;
+        case link.includes("tplab"):
+          data[i] = (await checkPrices.tplab(link)) || { link };
+          break;
+        case link.includes("gland"):
+          data[i] = (await checkPrices.gland(link)) || { link };
+          break;
+        case link.includes("sieuthimaychu"):
+          data[i] = (await checkPrices.sieuthimaychu(link)) || { link };
+          break;
+        case link.includes("maytinhbinhduong"):
+          data[i] = (await checkPrices.maytinhbinhduong(link)) || { link };
+          break;
+        case link.includes("memoryzone"):
+          data[i] = (await checkPrices.memoryzone(link)) || { link };
+          break;
+        case link.includes("tinhocngoisao"):
+          data[i] = (await checkPrices.tinhocngoisao(link)) || { link };
+          break;
+        case link.includes("hacom"):
+          data[i] = (await checkPrices.hacom(link)) || { link };
+          break;
+        case link.includes("phongvu"):
+          data[i] = (await checkPrices.phongvu(link)) || { link };
+          break;
+        case link.includes("anphatpc"):
+          data[i] = (await checkPrices.anphatpc(link)) || { link };
+          break;
+        case link.includes("xgear"):
+          data[i] = (await checkPrices.xgear(link)) || { link };
+          break;
+        case link.includes("playzone"):
+          data[i] = (await checkPrices.playzone(link)) || { link };
+          break;
+        case link.includes("dergo"):
+          data[i] = (await checkPrices.dergo(link)) || { link };
+          break;
+        case link.includes("themanson"):
+          data[i] = (await checkPrices.themanson(link)) || { link };
+          break;
+        case link.includes("ergonomic"):
+          data[i] = (await checkPrices.ergonomic(link)) || { link };
+          break;
+        case link.includes("akko.com"):
+          data[i] = (await checkPrices.akko(link)) || { link };
+          break;
+        case link.includes("owlgaming"):
+          data[i] = (await checkPrices.owlgaming(link)) || { link };
+          break;
+        case link.includes("tmins"):
+          data[i] = (await checkPrices.tmins(link)) || { link };
+          break;
+        case link.includes("tanthanhdanh"):
+          data[i] = (await checkPrices.tanthanhdanh(link)) || { link };
+          break;
+        case link.includes("hotgear"):
+          data[i] = (await checkPrices.hotgear(link)) || { link };
+          break;
+        case link.includes("satech"):
+          data[i] = (await checkPrices.satech(link)) || { link };
+          break;
+        case link.includes("bpstore"):
+          data[i] = (await checkPrices.bpstore(link)) || { link };
+          break;
+        case link.includes("hangchinhhieu"):
+          data[i] = (await checkPrices.hangchinhhieu(link)) || { link };
+          break;
+        case link.includes("soigear"):
+          data[i] = (await checkPrices.soigear(link)) || { link };
+          break;
+        case link.includes("kicap"):
+          data[i] = (await checkPrices.kicap(link)) || { link };
+          break;
+        case link.includes("thegioigear"):
+          data[i] = (await checkPrices.thegioigear(link)) || { link };
+          break;
+        case link.includes("khanhhan"):
+          data[i] = (await checkPrices.khanhhan(link)) || { link };
+          break;
+        case link.includes("banghechoigame"):
+          data[i] = (await checkPrices.banghechoigame(link)) || { link };
+          break;
+        case link.includes("lg.com"):
+          data[i] = (await checkPrices.lg(link)) || { link };
+          break;
+        case link.includes("logitech.com"):
+          data[i] = (await checkPrices.logitech(link)) || { link };
+          break;
+        case link.includes("razer"):
+          data[i] = (await checkPrices.razer(link)) || { link };
+          break;
+        case link.includes("steelseries"):
+          data[i] = (await checkPrices.steelseries(link)) || { link };
+          break;
+        case link.includes("fl-esports"):
+          data[i] = (await checkPrices.flEsports(link)) || { link };
+          break;
+        case link.includes("akkogear"):
+          data[i] = (await checkPrices.akkogear(link)) || { link };
+          break;
+        case link.includes("edravn"):
+          data[i] = (await checkPrices.edravn(link)) || { link };
+          break;
+        case link.includes("nzxt"):
+          data[i] = (await checkPrices.nzxt(link)) || { link };
+          break;
+        case link.includes("asus.com"):
+          data[i] = (await checkPrices.asus(link)) || { link };
+          break;
+        case link.includes("tnc.com"):
+          data[i] = (await checkPrices.tnc(link)) || { link };
+          break;
+        case link.includes("haianh.vn"):
+          data[i] = (await checkPrices.haianh(link)) || { link };
+          break;
+        case link.includes("gearshop.vn"):
+          data[i] = (await checkPrices.gearshop(link)) || { link };
+          break;
+        case link.includes("azaudio.vn"):
+          data[i] = (await checkPrices.azaudio(link)) || { link };
+          break;
+        case link.includes("mixicomputer.vn"):
+          data[i] = (await checkPrices.mixicomputer(link)) || { link };
+          break;
+        case link.includes("combatgaming.vn"):
+          data[i] = (await checkPrices.combatgaming(link)) || { link };
+          break;
+        case link.includes("hoangphatvn.vn"):
+          data[i] = (await checkPrices.hoangphatvn(link)) || { link };
+          break;
+        case link.includes("saigongear.vn"):
+          data[i] = (await checkPrices.saigongear(link)) || { link };
+          break;
+        case link.includes("fptshop.com"):
+          data[i] = (await checkPrices.fptshop(link)) || { link };
+          break;
+        default:
+          break;
       }
+    } else {
+      data[i] = { link: null };
     }
   }
   var dataSort = data.sort(({ price: a }, { price: b }) => a - b);

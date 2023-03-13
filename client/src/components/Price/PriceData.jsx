@@ -65,7 +65,7 @@ function PriceData({ prices }) {
     formData &&
     formData.length > 0 &&
     formData.map((data, index) =>
-      data.link ? (
+      data && data.link ? (
         <Col xs={{ span: 24 }} sm={{ span: 8 }} key={index}>
           <PriceItem stt={index} price={data} onRemove={onRemove} />
         </Col>

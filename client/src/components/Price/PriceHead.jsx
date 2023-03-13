@@ -21,6 +21,7 @@ function PriceHead({ prices }) {
     prices.data &&
     prices.data.map(
       (value, index) =>
+        value &&
         value.important && (
           <Space direction="vertical" size={15} key={index}>
             <Link to={value.link || "/"} target="_blank">

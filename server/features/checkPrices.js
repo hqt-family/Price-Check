@@ -55,7 +55,7 @@ const cellphones = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -73,7 +73,7 @@ const gearvn = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -92,7 +92,7 @@ const phucanh = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -111,7 +111,7 @@ const nguyencongpc = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -130,7 +130,7 @@ const mega = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -149,7 +149,7 @@ const kccshop = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -168,7 +168,7 @@ const tncstore = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -187,7 +187,7 @@ const npcshop = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -205,7 +205,7 @@ const khoavang = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -226,7 +226,7 @@ const songphuong = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -246,7 +246,7 @@ const tplab = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -266,7 +266,7 @@ const gland = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -286,7 +286,7 @@ const memoryzone = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -305,7 +305,7 @@ const hacom = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -325,7 +325,7 @@ const tinhocngoisao = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -345,7 +345,7 @@ const myboss = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -364,7 +364,7 @@ const minhancomputer = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -383,7 +383,7 @@ const sieuthimaychu = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -402,7 +402,7 @@ const maytinhbinhduong = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -421,7 +421,7 @@ const ankhang = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -440,7 +440,7 @@ const phongvu = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -459,7 +459,7 @@ const anphatpc = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -478,7 +478,7 @@ const xgear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -498,7 +498,7 @@ const playzone = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -518,7 +518,7 @@ const dergo = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -537,7 +537,7 @@ const ergonomic = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -556,7 +556,7 @@ const themanson = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -575,7 +575,7 @@ const akko = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -594,7 +594,7 @@ const owlgaming = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -614,7 +614,7 @@ const tmins = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -635,7 +635,7 @@ const tanthanhdanh = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -655,7 +655,7 @@ const hotgear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -675,7 +675,7 @@ const satech = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -693,7 +693,7 @@ const bpstore = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -716,7 +716,7 @@ const hangchinhhieu = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -736,7 +736,7 @@ const soigear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -755,7 +755,7 @@ const kicap = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -774,7 +774,7 @@ const khanhhan = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -794,7 +794,7 @@ const lg = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -814,7 +814,7 @@ const thegioigear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -833,7 +833,7 @@ const banghechoigame = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -853,7 +853,7 @@ const logitech = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -874,7 +874,7 @@ const razer = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -894,7 +894,7 @@ const steelseries = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -914,7 +914,7 @@ const nzxt = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -934,7 +934,7 @@ const asus = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -954,7 +954,7 @@ const flEsports = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -974,7 +974,7 @@ const akkogear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -995,7 +995,7 @@ const edravn = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1013,7 +1013,7 @@ const tnc = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1031,7 +1031,7 @@ const haianh = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1049,7 +1049,7 @@ const mixicomputer = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1067,7 +1067,7 @@ const azaudio = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1086,7 +1086,7 @@ const gearshop = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1105,7 +1105,7 @@ const combatgaming = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1123,7 +1123,7 @@ const hoangphatvn = async (link) => {
       };
     }
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1141,33 +1141,7 @@ const saigongear = async (link) => {
       };
     }
   } catch (error) {
-    return error;
-  }
-};
-
-const fptshop = async (link) => {
-  try {
-    const response = await axios.get(link);
-    const data = (response && response.data) || null;
-    if (data) {
-      const $ = cheerio.load(response.data);
-      const obj = $("script");
-      for (var i in obj) {
-        for (var j in obj[i].children) {
-          var text = obj[i].children[j].data;
-          console.log(text);
-          if (text && text.includes("currency") && text.includes("product")) {
-          }
-        }
-      }
-      // return {
-      //   brand: "fptshop",
-      //   price,
-      //   link,
-      // };
-    }
-  } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
@@ -1229,6 +1203,5 @@ const checkPrices = {
   combatgaming,
   hoangphatvn,
   saigongear,
-  fptshop,
 };
 module.exports = checkPrices;

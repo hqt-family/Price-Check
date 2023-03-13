@@ -197,7 +197,7 @@ const putPrice = asyncHandler(async (req, res) => {
         case link.includes("logitech.com"):
           data[i] = (await checkPrices.logitech(link)) || { link };
           break;
-        case link.includes("razer"):
+        case link.includes("razer.com"):
           data[i] = (await checkPrices.razer(link)) || { link };
           break;
         case link.includes("steelseries"):

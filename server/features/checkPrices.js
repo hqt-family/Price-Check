@@ -1145,7 +1145,599 @@ const saigongear = async (link) => {
   }
 };
 
+const mediamart = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Mediamart",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const nguyenkim = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Nguyễn Kim",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const quynhoncomputer = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Quy Nhơn Computer",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const tinhocdaiviet = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Tin Học Đại Việt",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const chinhnhan = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[itemprop="price"]').attr("content"));
+      return {
+        brand: "Chính Nhân",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ergochair = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      return {
+        brand: "Ergochair",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const gtchair = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Gtchair",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ergohome = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[itemprop="price"]').attr("content"));
+      return {
+        brand: "Ergohome",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const dandihome = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "lowPrice") || null;
+      return {
+        brand: "Dandihome",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const beegaming = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "lowPrice") || null;
+      return {
+        brand: "Beegaming",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const phukienmaytinh = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Phụ Kiện Máy Tính",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const eagear = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Eagear",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ahstore = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Ahstore",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const maytinhhd = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Máy Tính HD",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ezpc = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "EZPC",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const thinkpro = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "Thinkpro",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const phongcachxanh = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "phongcachxanh",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const kythuatsovn = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "kythuatsovn",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const vnsup = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "vnsup",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const dellpc = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      return {
+        brand: "dellpc",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const maianhpc = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "maianhpc",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const mypc = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "mypc",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const punstore = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "punstore",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const laptop123 = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "laptop123",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const benCom = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "ben",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const hugotech = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="product:price:amount"]').attr("content"));
+      return {
+        brand: "hugotech",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const shopcom = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "shopcom",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const maytinhbienhoa = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      return {
+        brand: "maytinhbienhoa",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const chuvu = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      return {
+        brand: "chuvu",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const nguyenvu = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber($('meta[property="product:price:amount"]').attr("content"));
+      return {
+        brand: "nguyenvu",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const checkPrices = {
+  nguyenvu,
+  chuvu,
+  maytinhbienhoa,
+  shopcom,
+  hugotech,
+  benCom,
+  laptop123,
+  punstore,
+  mypc,
+  maianhpc,
+  dellpc,
+  vnsup,
+  kythuatsovn,
+  phongcachxanh,
+  thinkpro,
+  ezpc,
+  maytinhhd,
+  ahstore,
+  eagear,
+  phukienmaytinh,
+  beegaming,
+  dandihome,
+  ergohome,
+  gtchair,
+  ergochair,
+  chinhnhan,
+  tinhocdaiviet,
+  quynhoncomputer,
+  nguyenkim,
+  mediamart,
   cellphones,
   gearvn,
   phucanh,

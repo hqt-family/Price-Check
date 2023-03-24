@@ -149,7 +149,7 @@ const putPrice = asyncHandler(async (req, res) => {
         case link.includes("themanson"):
           data[i] = (await checkPrices.themanson(link)) || { link };
           break;
-        case link.includes("ergonomic"):
+        case link.includes("ergonomic.com"):
           data[i] = (await checkPrices.ergonomic(link)) || { link };
           break;
         case link.includes("akko.com"):
@@ -203,7 +203,7 @@ const putPrice = asyncHandler(async (req, res) => {
         case link.includes("steelseries"):
           data[i] = (await checkPrices.steelseries(link)) || { link };
           break;
-        case link.includes("fl-esports"):
+        case link.includes("fl-esports.vn"):
           data[i] = (await checkPrices.flEsports(link)) || { link };
           break;
         case link.includes("akkogear"):
@@ -244,6 +244,96 @@ const putPrice = asyncHandler(async (req, res) => {
           break;
         case link.includes("fptshop.com"):
           data[i] = (await checkPrices.fptshop(link)) || { link };
+          break;
+        case link.includes("mediamart"):
+          data[i] = (await checkPrices.mediamart(link)) || { link };
+          break;
+        case link.includes("nguyenkim.com"):
+          data[i] = (await checkPrices.nguyenkim(link)) || { link };
+          break;
+        case link.includes("quynhoncomputer"):
+          data[i] = (await checkPrices.quynhoncomputer(link)) || { link };
+          break;
+        case link.includes("tinhocdaiviet"):
+          data[i] = (await checkPrices.tinhocdaiviet(link)) || { link };
+          break;
+        case link.includes("chinhnhan"):
+          data[i] = (await checkPrices.chinhnhan(link)) || { link };
+          break;
+        case link.includes("ergochair.vn"):
+          data[i] = (await checkPrices.ergochair(link)) || { link };
+          break;
+        case link.includes("gtchair.com"):
+          data[i] = (await checkPrices.gtchair(link)) || { link };
+          break;
+        case link.includes("ergohome.vn"):
+          data[i] = (await checkPrices.ergohome(link)) || { link };
+          break;
+        case link.includes("dandihome.vn"):
+          data[i] = (await checkPrices.dandihome(link)) || { link };
+          break;
+        case link.includes("beegaming"):
+          data[i] = (await checkPrices.beegaming(link)) || { link };
+          break;
+        case link.includes("phukienmaytinh.vn"):
+          data[i] = (await checkPrices.phukienmaytinh(link)) || { link };
+          break;
+        case link.includes("eagear.vn"):
+          data[i] = (await checkPrices.eagear(link)) || { link };
+          break;
+        case link.includes("ahstore.vn"):
+          data[i] = (await checkPrices.ahstore(link)) || { link };
+          break;
+        case link.includes("maytinhhd.com"):
+          data[i] = (await checkPrices.maytinhhd(link)) || { link };
+          break;
+        case link.includes("ezpc.vn"):
+          data[i] = (await checkPrices.ezpc(link)) || { link };
+          break;
+        case link.includes("thinkpro"):
+          data[i] = (await checkPrices.thinkpro(link)) || { link };
+          break;
+        case link.includes("phongcachxanh.vn"):
+          data[i] = (await checkPrices.phongcachxanh(link)) || { link };
+          break;
+        case link.includes("kythuatsovn.net"):
+          data[i] = (await checkPrices.kythuatsovn(link)) || { link };
+          break;
+        case link.includes("vnsup.com"):
+          data[i] = (await checkPrices.vnsup(link)) || { link };
+          break;
+        case link.includes("dellpc.vn"):
+          data[i] = (await checkPrices.dellpc(link)) || { link };
+          break;
+        case link.includes("maianhpc.vn"):
+          data[i] = (await checkPrices.maianhpc(link)) || { link };
+          break;
+        case link.includes("mypc.vn"):
+          data[i] = (await checkPrices.mypc(link)) || { link };
+          break;
+        case link.includes("punstore.vn"):
+          data[i] = (await checkPrices.punstore(link)) || { link };
+          break;
+        case link.includes("laptop123.com.vn"):
+          data[i] = (await checkPrices.laptop123(link)) || { link };
+          break;
+        case link.includes("ben.com.vn"):
+          data[i] = (await checkPrices.benCom(link)) || { link };
+          break;
+        case link.includes("hugotech.vn"):
+          data[i] = (await checkPrices.hugotech(link)) || { link };
+          break;
+        case link.includes("shopcom.vn"):
+          data[i] = (await checkPrices.shopcom(link)) || { link };
+          break;
+        case link.includes("maytinhbienhoa.vn"):
+          data[i] = (await checkPrices.maytinhbienhoa(link)) || { link };
+          break;
+        case link.includes("chuvu.vn"):
+          data[i] = (await checkPrices.chuvu(link)) || { link };
+          break;
+        case link.includes("nguyenvu.store"):
+          data[i] = (await checkPrices.nguyenvu(link)) || { link };
           break;
         default:
           break;

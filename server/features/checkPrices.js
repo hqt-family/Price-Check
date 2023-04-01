@@ -1078,7 +1078,7 @@ const gearshop = async (link) => {
     if (data) {
       const $ = cheerio.load(response.data);
       var price =
-        replaceToNumber($('[itemprop="offers"] .amount').text()) || null;
+        replaceToNumber($('[itemprop="offers"] ins .amount').text()) || null;
       return {
         brand: "gearshop",
         price,

@@ -13,18 +13,17 @@ function PriceData({ prices }) {
 
   const authExits = localStorage.getItem("user");
   const [formData, setFormData] = useState(prices && prices.data);
-  const [flagFormData, setFlagFormData] = useState(formData);
 
-  const onValuesChange = (value) => {
+  const onFinish = (values) => {
     let newFormData = [...formData];
-    newFormData[Object.keys(value)[0]] = {
-      link: Object.values(value)[0],
-    };
-    setFlagFormData(newFormData);
-  };
-
-  const onFinish = () => {
-    dispatch(updatePrices({ id: prices.productId, data: flagFormData }));
+    for (const key in values) {
+      if (values[key]) {
+        newFormData[key] = {
+          link: values[key],
+        };
+      }
+    }
+    dispatch(updatePrices({ id: prices.productId, data: newFormData }));
   };
 
   const onRemove = (e) => {
@@ -33,7 +32,6 @@ function PriceData({ prices }) {
     newFormData[stt] = {
       link: null,
     };
-    setFlagFormData(newFormData);
     setFormData(newFormData);
   };
   const priceSortDom = prices && prices.data && (
@@ -82,7 +80,7 @@ function PriceData({ prices }) {
     );
 
   return (
-    <Form onFinish={onFinish} onValuesChange={onValuesChange}>
+    <Form onFinish={onFinish}>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         {priceSortDom}
         <Row gutter={[15, 15]}>{priceDataDom}</Row>

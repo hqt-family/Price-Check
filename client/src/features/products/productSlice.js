@@ -1,18 +1,18 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import productServices from './productService';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import productServices from "./productService";
 
 const initialState = {
   products: null,
   isLoadingProduct: false,
   isErrorProduct: false,
   messageProduct: "",
-}
+};
 
 export const getProducts = createAsyncThunk(
-  'products/all',
+  "products/all",
   async (data, thunkAPI) => {
     try {
-      return await productServices.call_apiProduct(data)
+      return await productServices.call_apiProduct(data);
     } catch (error) {
       const message =
         (error.response &&
@@ -23,16 +23,17 @@ export const getProducts = createAsyncThunk(
       return thunkAPI.rejectWithValue(message);
     }
   }
-)
+);
 
 export const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    reset: (state) => {
+    resetProduct: (state) => {
       state.isLoadingProduct = false;
       state.isErrorProduct = false;
       state.message = "";
+      state.products = null;
     },
   },
   extraReducers: (builder) => {
@@ -50,9 +51,9 @@ export const productSlice = createSlice({
         state.isErrorProduct = true;
         state.messageProduct = action.payload;
         state.products = null;
-      })
+      });
   },
 });
 
-export const { reset } = productSlice.actions;
+export const { resetProduct } = productSlice.actions;
 export default productSlice.reducer;

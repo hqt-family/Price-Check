@@ -32,7 +32,7 @@ function checkOffers(obj, splitValue, format) {
           );
         } else {
           return replaceToNumber(
-            text.split(`${splitValue}":`)[1].split(",")[0]
+            text.split(`${splitValue}":`)[1].split(",")[0].split(".")[0]
           );
         }
       }
@@ -1245,7 +1245,9 @@ const ergochair = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="og:price:amount"]').attr("content")
+      );
       return {
         brand: "Ergochair",
         price,
@@ -1509,7 +1511,9 @@ const dellpc = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="og:price:amount"]').attr("content")
+      );
       return {
         brand: "dellpc",
         price,
@@ -1622,7 +1626,9 @@ const hugotech = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="product:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="product:price:amount"]').attr("content")
+      );
       return {
         brand: "hugotech",
         price,
@@ -1653,13 +1659,53 @@ const shopcom = async (link) => {
   }
 };
 
+const logitechg = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "logitechg",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const mygear = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "mygear",
+        price,
+        link,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const maytinhbienhoa = async (link) => {
   try {
     const response = await axios.get(link);
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="og:price:amount"]').attr("content")
+      );
       return {
         brand: "maytinhbienhoa",
         price,
@@ -1677,7 +1723,9 @@ const chuvu = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="og:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="og:price:amount"]').attr("content")
+      );
       return {
         brand: "chuvu",
         price,
@@ -1695,7 +1743,9 @@ const nguyenvu = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber($('meta[property="product:price:amount"]').attr("content"));
+      var price = replaceToNumber(
+        $('meta[property="product:price:amount"]').attr("content")
+      );
       return {
         brand: "nguyenvu",
         price,
@@ -1707,7 +1757,25 @@ const nguyenvu = async (link) => {
   }
 };
 
+const apshop = async (link) => {
+  try {
+    const response = await axios.get(link);
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var price = replaceToNumber(
+        $('meta[property="og:price:amount"]').attr("content")
+      );
+      return price;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const checkPrices = {
+  mygear,
+  logitechg,
   nguyenvu,
   chuvu,
   maytinhbienhoa,
@@ -1795,5 +1863,6 @@ const checkPrices = {
   combatgaming,
   hoangphatvn,
   saigongear,
+  apshop,
 };
 module.exports = checkPrices;

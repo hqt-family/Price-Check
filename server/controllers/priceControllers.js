@@ -13,18 +13,29 @@ const getPrices = asyncHandler(async (req, res) => {
 });
 
 const postPrice = asyncHandler(async (req, res) => {
-  const { id, price, url } = req.body;
-  if (!id) {
+  const { id, title, image, url } = req.body;
+  const price = (await checkPrices.apshop(url)) || 0;
+  if (id === undefined) {
     res.status(400);
     throw new Error("Missing productID");
   }
 
-  if (!price) {
+  if (title === undefined) {
+    res.status(400);
+    throw new Error("Missing productTitle");
+  }
+
+  if (image === undefined) {
+    res.status(400);
+    throw new Error("Missing productImage");
+  }
+
+  if (price === undefined) {
     res.status(400);
     throw new Error("Missing productPrice");
   }
 
-  if (!url) {
+  if (url === undefined) {
     res.status(400);
     throw new Error("Missing productUrl");
   }
@@ -40,6 +51,8 @@ const postPrice = asyncHandler(async (req, res) => {
   } else {
     const postPrice = await Price.create({
       productId: id,
+      productTitle: title,
+      productImage: image,
       productPrice: price,
       productUrl: url,
       data: req.body.data,
@@ -62,8 +75,13 @@ const putPrice = asyncHandler(async (req, res) => {
       },
     }
   );
-
-  updatePrice.productPrice = response.data.product.variants[0].price;
+  updatePrice.productTitle = response.data.product.title;
+  updatePrice.productImage = response.data.product.images
+    ? response.data.product.images[0].src
+    : "";
+  updatePrice.productPrice = await checkPrices.apshop(
+    `https://apshop.vn/products/${response.data.product.handle}`
+  );
   updatePrice.data = data;
   await updatePrice.save();
   // Xử lý data
@@ -336,6 +354,12 @@ const putPrice = asyncHandler(async (req, res) => {
           case link.includes("nguyenvu.store"):
             data[key] = (await checkPrices.nguyenvu(link)) || { link };
             break;
+          case link.includes("logitechg.com"):
+            data[key] = (await checkPrices.logitechg(link)) || { link };
+            break;
+          case link.includes("mygear.vn"):
+            data[key] = (await checkPrices.mygear(link)) || { link };
+            break;
           default:
             break;
         }
@@ -344,7 +368,21 @@ const putPrice = asyncHandler(async (req, res) => {
       }
     })
   );
-  var dataSort = data.sort(({ price: a }, { price: b }) => a - b);
+  var dataSort = data.sort(({ price: a }, { price: b }) => {
+    if (a === undefined) {
+      return 1;
+    }
+
+    if (b === undefined) {
+      return -1;
+    }
+
+    if (a === b) {
+      return 0;
+    }
+
+    return a < b ? -1 : 1;
+  });
   updatePrice.data = dataSort;
   await updatePrice.save();
   res.status(200).json(updatePrice);

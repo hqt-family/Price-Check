@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import SearchForm from "../components/Search/SearchForm";
 
-import { getProducts } from "../features/products/productSlice";
+import { getProducts, resetProduct } from "../features/products/productSlice";
 import SearchData from "../components/Search/SearchData";
 
 import { Space } from "antd";
@@ -12,7 +12,6 @@ import Spinner from "../components/Spinner";
 
 import PriceHead from "../components/Price/PriceHead";
 import PriceData from "../components/Price/PriceData";
-import { resetPrice } from "../features/prices/priceSlice";
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -20,8 +19,9 @@ function Dashboard() {
 
   const [valueSearch, setValueSearch] = useState("");
 
-  const { products, isLoadingProduct, isErrorProduct, messageProduct } =
-    useSelector((state) => state.products);
+  const { products, isErrorProduct, messageProduct } = useSelector(
+    (state) => state.products
+  );
   const { prices, isLoadingPrice, isErrorPrice, messagePrice } = useSelector(
     (state) => state.prices
   );
@@ -37,9 +37,10 @@ function Dashboard() {
       }
       if (valueSearch !== "") {
         dispatch(getProducts({ keywords: valueSearch }));
-        dispatch(resetPrice());
+      } else {
+        dispatch(resetProduct());
       }
-    }, 750);
+    }, 500);
     return () => clearTimeout(timeOutId);
   }, [
     isErrorPrice,
@@ -51,13 +52,13 @@ function Dashboard() {
     valueSearch,
   ]);
 
-  if (isLoadingProduct || isLoadingPrice) {
+  if (isLoadingPrice) {
     return <Spinner />;
   }
 
   return (
     <Space direction="vertical" size={15} className="home-body-wrap">
-      <Space direction="vertical" size={15} className="home-body-search">
+      <Space direction="vertical" size={10} className="home-body-search">
         <SearchForm valueSearch={valueSearch} setValueSearch={setValueSearch} />
         <SearchData products={products} />
       </Space>

@@ -6,6 +6,14 @@ const priceSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    productTitle: {
+      type: String,
+      require: true,
+    },
+    productImage: {
+      type: String,
+      require: true,
+    },
     productPrice: {
       type: Number,
       require: true,

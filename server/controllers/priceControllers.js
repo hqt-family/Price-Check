@@ -390,7 +390,7 @@ const putPrice = asyncHandler(async (req, res) => {
 
 const deletePrice = asyncHandler(async (req, res) => {
   const deletePrice = await Price.findByIdAndDelete(req.params.id);
-  res.status(200).json({ id: req.params.id });
+  res.status(200).json({ id: req.params.id }); 
 });
 
 module.exports = {

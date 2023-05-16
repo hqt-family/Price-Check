@@ -96,9 +96,9 @@ const putPrice = asyncHandler(async (req, res) => {
           case link.includes("gearvn"):
             data[key] = (await checkPrices.gearvn(link)) || { link };
             break;
-          // case link.includes("phucanh"):
-          //   data[key] = (await checkPrices.phucanh(link)) || { link };
-          //   break;
+          case link.includes("phucanh"):
+            data[key] = (await checkPrices.phucanh(link)) || { link };
+            break;
           case link.includes("nguyencongpc"):
             data[key] = (await checkPrices.nguyencongpc(link)) || { link };
             break;

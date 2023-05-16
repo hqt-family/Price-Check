@@ -44,7 +44,7 @@ const cellphones = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -61,11 +61,11 @@ const cellphones = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
     console.log(link);
-    return null;
+    return;
   }
 };
 
@@ -73,7 +73,7 @@ const gearvn = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -88,10 +88,10 @@ const gearvn = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -99,7 +99,7 @@ const phucanh = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -115,10 +115,10 @@ const phucanh = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -126,7 +126,7 @@ const nguyencongpc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -142,10 +142,10 @@ const nguyencongpc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -153,7 +153,7 @@ const mega = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -169,10 +169,10 @@ const mega = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -180,7 +180,7 @@ const kccshop = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -196,10 +196,10 @@ const kccshop = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -207,7 +207,7 @@ const tncstore = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -223,10 +223,10 @@ const tncstore = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -234,7 +234,7 @@ const npcshop = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -250,10 +250,10 @@ const npcshop = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -261,7 +261,7 @@ const khoavang = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -276,10 +276,10 @@ const khoavang = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -287,7 +287,7 @@ const songphuong = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -305,10 +305,10 @@ const songphuong = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -316,7 +316,7 @@ const tplab = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -333,10 +333,10 @@ const tplab = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -344,7 +344,7 @@ const gland = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -361,10 +361,10 @@ const gland = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -372,7 +372,7 @@ const memoryzone = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -389,10 +389,10 @@ const memoryzone = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -400,7 +400,7 @@ const hacom = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -416,10 +416,10 @@ const hacom = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -427,7 +427,7 @@ const tinhocngoisao = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -444,10 +444,10 @@ const tinhocngoisao = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -455,7 +455,7 @@ const myboss = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -472,10 +472,10 @@ const myboss = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -483,7 +483,7 @@ const minhancomputer = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -499,10 +499,10 @@ const minhancomputer = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -510,7 +510,7 @@ const sieuthimaychu = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -526,10 +526,10 @@ const sieuthimaychu = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -537,7 +537,7 @@ const maytinhbinhduong = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -553,10 +553,10 @@ const maytinhbinhduong = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -564,7 +564,7 @@ const ankhang = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -580,10 +580,10 @@ const ankhang = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -591,7 +591,7 @@ const phongvu = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -607,10 +607,10 @@ const phongvu = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -618,7 +618,7 @@ const anphatpc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -634,10 +634,10 @@ const anphatpc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -645,7 +645,7 @@ const xgear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -661,10 +661,10 @@ const xgear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -672,7 +672,7 @@ const playzone = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -689,10 +689,10 @@ const playzone = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -700,7 +700,7 @@ const dergo = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -717,10 +717,10 @@ const dergo = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -728,7 +728,7 @@ const ergonomic = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -744,10 +744,10 @@ const ergonomic = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -755,7 +755,7 @@ const themanson = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -771,10 +771,10 @@ const themanson = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -782,7 +782,7 @@ const akko = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -798,10 +798,10 @@ const akko = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -809,7 +809,7 @@ const owlgaming = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -825,10 +825,10 @@ const owlgaming = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -836,7 +836,7 @@ const tmins = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -853,10 +853,10 @@ const tmins = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -864,7 +864,7 @@ const tanthanhdanh = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -882,10 +882,10 @@ const tanthanhdanh = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -893,7 +893,7 @@ const hotgear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -910,10 +910,10 @@ const hotgear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -921,7 +921,7 @@ const satech = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -938,10 +938,10 @@ const satech = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -949,7 +949,7 @@ const bpstore = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -964,10 +964,10 @@ const bpstore = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -975,7 +975,7 @@ const hangchinhhieu = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -995,10 +995,10 @@ const hangchinhhieu = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1006,7 +1006,7 @@ const soigear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1023,10 +1023,10 @@ const soigear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1034,7 +1034,7 @@ const kicap = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1050,10 +1050,10 @@ const kicap = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1061,7 +1061,7 @@ const khanhhan = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1077,10 +1077,10 @@ const khanhhan = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1088,7 +1088,7 @@ const lg = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1105,10 +1105,10 @@ const lg = async (link) => {
         important: "/brands/lg-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1116,7 +1116,7 @@ const thegioigear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1133,10 +1133,10 @@ const thegioigear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1144,7 +1144,7 @@ const banghechoigame = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1160,10 +1160,10 @@ const banghechoigame = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1171,7 +1171,7 @@ const logitech = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1188,10 +1188,10 @@ const logitech = async (link) => {
         important: "/brands/logitech-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1199,7 +1199,7 @@ const razer = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1217,10 +1217,10 @@ const razer = async (link) => {
         important: "/brands/razer-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1228,7 +1228,7 @@ const steelseries = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1245,10 +1245,10 @@ const steelseries = async (link) => {
         important: "/brands/steelseries-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1256,7 +1256,7 @@ const nzxt = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1273,10 +1273,10 @@ const nzxt = async (link) => {
         important: "/brands/nzxt-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1284,7 +1284,7 @@ const asus = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1301,10 +1301,10 @@ const asus = async (link) => {
         important: "/brands/asus-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1312,7 +1312,7 @@ const flEsports = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1329,10 +1329,10 @@ const flEsports = async (link) => {
         important: "/brands/fl-esports.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1340,7 +1340,7 @@ const akkogear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1357,10 +1357,10 @@ const akkogear = async (link) => {
         important: "/brands/akkogear-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1368,7 +1368,7 @@ const edravn = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1386,10 +1386,10 @@ const edravn = async (link) => {
         important: "/brands/edra-logo.png",
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1397,7 +1397,7 @@ const tnc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1412,10 +1412,10 @@ const tnc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1423,7 +1423,7 @@ const haianh = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1438,10 +1438,10 @@ const haianh = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1449,7 +1449,7 @@ const mixicomputer = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1464,10 +1464,10 @@ const mixicomputer = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1475,7 +1475,7 @@ const azaudio = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1490,10 +1490,10 @@ const azaudio = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1501,7 +1501,7 @@ const gearshop = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1517,10 +1517,10 @@ const gearshop = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1528,7 +1528,7 @@ const combatgaming = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1544,10 +1544,10 @@ const combatgaming = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1555,7 +1555,7 @@ const hoangphatvn = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1570,10 +1570,10 @@ const hoangphatvn = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1581,7 +1581,7 @@ const saigongear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1596,10 +1596,10 @@ const saigongear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1607,7 +1607,7 @@ const mediamart = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1623,10 +1623,10 @@ const mediamart = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1634,7 +1634,7 @@ const nguyenkim = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1650,10 +1650,10 @@ const nguyenkim = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1661,7 +1661,7 @@ const quynhoncomputer = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1677,10 +1677,10 @@ const quynhoncomputer = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1688,7 +1688,7 @@ const tinhocdaiviet = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1704,10 +1704,10 @@ const tinhocdaiviet = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1715,7 +1715,7 @@ const chinhnhan = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1730,10 +1730,10 @@ const chinhnhan = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1741,7 +1741,7 @@ const ergochair = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1758,10 +1758,10 @@ const ergochair = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1769,7 +1769,7 @@ const gtchair = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1785,10 +1785,10 @@ const gtchair = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1796,7 +1796,7 @@ const ergohome = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1811,10 +1811,10 @@ const ergohome = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1822,7 +1822,7 @@ const dandihome = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1838,10 +1838,10 @@ const dandihome = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1849,7 +1849,7 @@ const beegaming = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1865,10 +1865,10 @@ const beegaming = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1876,7 +1876,7 @@ const phukienmaytinh = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1892,10 +1892,10 @@ const phukienmaytinh = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1903,7 +1903,7 @@ const eagear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1919,10 +1919,10 @@ const eagear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1930,7 +1930,7 @@ const ahstore = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1946,10 +1946,10 @@ const ahstore = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1957,7 +1957,7 @@ const maytinhhd = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -1973,10 +1973,10 @@ const maytinhhd = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -1984,7 +1984,7 @@ const ezpc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2000,10 +2000,10 @@ const ezpc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2011,7 +2011,7 @@ const thinkpro = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2027,10 +2027,10 @@ const thinkpro = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2038,7 +2038,7 @@ const phongcachxanh = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2054,10 +2054,10 @@ const phongcachxanh = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2065,7 +2065,7 @@ const kythuatsovn = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2081,10 +2081,10 @@ const kythuatsovn = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2092,7 +2092,7 @@ const vnsup = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2108,10 +2108,10 @@ const vnsup = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2119,7 +2119,7 @@ const dellpc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2136,10 +2136,10 @@ const dellpc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2147,7 +2147,7 @@ const maianhpc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2163,10 +2163,10 @@ const maianhpc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2174,7 +2174,7 @@ const mypc = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2190,10 +2190,10 @@ const mypc = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2201,7 +2201,7 @@ const punstore = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2217,10 +2217,10 @@ const punstore = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2228,7 +2228,7 @@ const laptop123 = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2244,10 +2244,10 @@ const laptop123 = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2255,7 +2255,7 @@ const benCom = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2271,10 +2271,10 @@ const benCom = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2282,7 +2282,7 @@ const hugotech = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2299,10 +2299,10 @@ const hugotech = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2310,7 +2310,7 @@ const shopcom = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2326,10 +2326,10 @@ const shopcom = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2337,7 +2337,7 @@ const logitechg = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2353,10 +2353,10 @@ const logitechg = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2364,7 +2364,7 @@ const mygear = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2380,10 +2380,10 @@ const mygear = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2391,7 +2391,7 @@ const maytinhbienhoa = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2408,10 +2408,10 @@ const maytinhbienhoa = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2419,7 +2419,7 @@ const chuvu = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2436,10 +2436,10 @@ const chuvu = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2447,7 +2447,7 @@ const nguyenvu = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2464,10 +2464,10 @@ const nguyenvu = async (link) => {
         link,
       };
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 
@@ -2475,7 +2475,7 @@ const apshop = async (link) => {
   try {
     const response = await axios.get(link, {
       maxRedirects: 0,
-      timeout: 5000,
+      timeout: 3000,
       validateStatus: function (status) {
         return status >= 200 && status <= 300;
       },
@@ -2488,10 +2488,10 @@ const apshop = async (link) => {
       );
       return price;
     } else {
-      return null;
+      return;
     }
   } catch (error) {
-    return null;
+    return;
   }
 };
 

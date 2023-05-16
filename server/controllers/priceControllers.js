@@ -90,9 +90,9 @@ const putPrice = asyncHandler(async (req, res) => {
       if (item && typeof item.link !== undefined) {
         const link = data[key].link || "";
         switch (true) {
-          case link.includes("cellphones"):
+          /*case link.includes("cellphones"):
             data[key] = (await checkPrices.cellphones(link)) || { link };
-            break;
+            break;*/
           case link.includes("gearvn"):
             data[key] = (await checkPrices.gearvn(link)) || { link };
             break;

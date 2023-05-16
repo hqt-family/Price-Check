@@ -42,7 +42,7 @@ function checkOffers(obj, splitValue, format) {
 
 const cellphones = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 01}); 
+    const response = await axios.get(link, { maxRedirects: 0 }); 
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -64,7 +64,7 @@ const cellphones = async (link) => {
 
 const gearvn = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -85,7 +85,7 @@ const gearvn = async (link) => {
 
 const phucanh = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -107,7 +107,7 @@ const phucanh = async (link) => {
 
 const nguyencongpc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -129,7 +129,7 @@ const nguyencongpc = async (link) => {
 
 const mega = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -151,7 +151,7 @@ const mega = async (link) => {
 
 const kccshop = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -173,7 +173,7 @@ const kccshop = async (link) => {
 
 const tncstore = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -195,7 +195,7 @@ const tncstore = async (link) => {
 
 const npcshop = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -217,7 +217,7 @@ const npcshop = async (link) => {
 
 const khoavang = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -238,7 +238,7 @@ const khoavang = async (link) => {
 
 const songphuong = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -262,7 +262,7 @@ const songphuong = async (link) => {
 
 const tplab = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -285,7 +285,7 @@ const tplab = async (link) => {
 
 const gland = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -308,7 +308,7 @@ const gland = async (link) => {
 
 const memoryzone = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -331,7 +331,7 @@ const memoryzone = async (link) => {
 
 const hacom = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -353,7 +353,7 @@ const hacom = async (link) => {
 
 const tinhocngoisao = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -376,7 +376,7 @@ const tinhocngoisao = async (link) => {
 
 const myboss = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -399,7 +399,7 @@ const myboss = async (link) => {
 
 const minhancomputer = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -421,7 +421,7 @@ const minhancomputer = async (link) => {
 
 const sieuthimaychu = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -443,7 +443,7 @@ const sieuthimaychu = async (link) => {
 
 const maytinhbinhduong = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -465,7 +465,7 @@ const maytinhbinhduong = async (link) => {
 
 const ankhang = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -487,7 +487,7 @@ const ankhang = async (link) => {
 
 const phongvu = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -509,7 +509,7 @@ const phongvu = async (link) => {
 
 const anphatpc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -531,7 +531,7 @@ const anphatpc = async (link) => {
 
 const xgear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -553,7 +553,7 @@ const xgear = async (link) => {
 
 const playzone = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -576,7 +576,7 @@ const playzone = async (link) => {
 
 const dergo = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -599,7 +599,7 @@ const dergo = async (link) => {
 
 const ergonomic = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -621,7 +621,7 @@ const ergonomic = async (link) => {
 
 const themanson = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -643,7 +643,7 @@ const themanson = async (link) => {
 
 const akko = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -665,7 +665,7 @@ const akko = async (link) => {
 
 const owlgaming = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -687,7 +687,7 @@ const owlgaming = async (link) => {
 
 const tmins = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -710,7 +710,7 @@ const tmins = async (link) => {
 
 const tanthanhdanh = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -734,7 +734,7 @@ const tanthanhdanh = async (link) => {
 
 const hotgear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -757,7 +757,7 @@ const hotgear = async (link) => {
 
 const satech = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -780,7 +780,7 @@ const satech = async (link) => {
 
 const bpstore = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -801,7 +801,7 @@ const bpstore = async (link) => {
 
 const hangchinhhieu = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -827,7 +827,7 @@ const hangchinhhieu = async (link) => {
 
 const soigear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -850,7 +850,7 @@ const soigear = async (link) => {
 
 const kicap = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -872,7 +872,7 @@ const kicap = async (link) => {
 
 const khanhhan = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -894,7 +894,7 @@ const khanhhan = async (link) => {
 
 const lg = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -917,7 +917,7 @@ const lg = async (link) => {
 
 const thegioigear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -940,7 +940,7 @@ const thegioigear = async (link) => {
 
 const banghechoigame = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -962,7 +962,7 @@ const banghechoigame = async (link) => {
 
 const logitech = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -985,7 +985,7 @@ const logitech = async (link) => {
 
 const razer = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1009,7 +1009,7 @@ const razer = async (link) => {
 
 const steelseries = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1032,7 +1032,7 @@ const steelseries = async (link) => {
 
 const nzxt = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1055,7 +1055,7 @@ const nzxt = async (link) => {
 
 const asus = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1078,7 +1078,7 @@ const asus = async (link) => {
 
 const flEsports = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1101,7 +1101,7 @@ const flEsports = async (link) => {
 
 const akkogear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1124,7 +1124,7 @@ const akkogear = async (link) => {
 
 const edravn = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1148,7 +1148,7 @@ const edravn = async (link) => {
 
 const tnc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1169,7 +1169,7 @@ const tnc = async (link) => {
 
 const haianh = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1190,7 +1190,7 @@ const haianh = async (link) => {
 
 const mixicomputer = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1211,7 +1211,7 @@ const mixicomputer = async (link) => {
 
 const azaudio = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1232,7 +1232,7 @@ const azaudio = async (link) => {
 
 const gearshop = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1254,7 +1254,7 @@ const gearshop = async (link) => {
 
 const combatgaming = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1276,7 +1276,7 @@ const combatgaming = async (link) => {
 
 const hoangphatvn = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1297,7 +1297,7 @@ const hoangphatvn = async (link) => {
 
 const saigongear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1318,7 +1318,7 @@ const saigongear = async (link) => {
 
 const mediamart = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1340,7 +1340,7 @@ const mediamart = async (link) => {
 
 const nguyenkim = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1362,7 +1362,7 @@ const nguyenkim = async (link) => {
 
 const quynhoncomputer = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1384,7 +1384,7 @@ const quynhoncomputer = async (link) => {
 
 const tinhocdaiviet = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1406,7 +1406,7 @@ const tinhocdaiviet = async (link) => {
 
 const chinhnhan = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1427,7 +1427,7 @@ const chinhnhan = async (link) => {
 
 const ergochair = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1450,7 +1450,7 @@ const ergochair = async (link) => {
 
 const gtchair = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1472,7 +1472,7 @@ const gtchair = async (link) => {
 
 const ergohome = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1493,7 +1493,7 @@ const ergohome = async (link) => {
 
 const dandihome = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1515,7 +1515,7 @@ const dandihome = async (link) => {
 
 const beegaming = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1537,7 +1537,7 @@ const beegaming = async (link) => {
 
 const phukienmaytinh = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1559,7 +1559,7 @@ const phukienmaytinh = async (link) => {
 
 const eagear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1581,7 +1581,7 @@ const eagear = async (link) => {
 
 const ahstore = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1603,7 +1603,7 @@ const ahstore = async (link) => {
 
 const maytinhhd = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1625,7 +1625,7 @@ const maytinhhd = async (link) => {
 
 const ezpc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1647,7 +1647,7 @@ const ezpc = async (link) => {
 
 const thinkpro = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1669,7 +1669,7 @@ const thinkpro = async (link) => {
 
 const phongcachxanh = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1691,7 +1691,7 @@ const phongcachxanh = async (link) => {
 
 const kythuatsovn = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1713,7 +1713,7 @@ const kythuatsovn = async (link) => {
 
 const vnsup = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1735,7 +1735,7 @@ const vnsup = async (link) => {
 
 const dellpc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1758,7 +1758,7 @@ const dellpc = async (link) => {
 
 const maianhpc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1780,7 +1780,7 @@ const maianhpc = async (link) => {
 
 const mypc = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1802,7 +1802,7 @@ const mypc = async (link) => {
 
 const punstore = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1824,7 +1824,7 @@ const punstore = async (link) => {
 
 const laptop123 = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1846,7 +1846,7 @@ const laptop123 = async (link) => {
 
 const benCom = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1868,7 +1868,7 @@ const benCom = async (link) => {
 
 const hugotech = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1891,7 +1891,7 @@ const hugotech = async (link) => {
 
 const shopcom = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1913,7 +1913,7 @@ const shopcom = async (link) => {
 
 const logitechg = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1935,7 +1935,7 @@ const logitechg = async (link) => {
 
 const mygear = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1957,7 +1957,7 @@ const mygear = async (link) => {
 
 const maytinhbienhoa = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -1980,7 +1980,7 @@ const maytinhbienhoa = async (link) => {
 
 const chuvu = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -2003,7 +2003,7 @@ const chuvu = async (link) => {
 
 const nguyenvu = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
@@ -2026,7 +2026,7 @@ const nguyenvu = async (link) => {
 
 const apshop = async (link) => {
   try {
-    const response = await axios.get(link, { maxRedirects: 1 });
+    const response = await axios.get(link, { maxRedirects: 0 });
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);

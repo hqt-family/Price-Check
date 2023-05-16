@@ -53,9 +53,12 @@ const cellphones = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -71,9 +74,12 @@ const gearvn = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -90,9 +96,12 @@ const phucanh = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -109,9 +118,12 @@ const nguyencongpc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -128,9 +140,12 @@ const mega = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -147,9 +162,12 @@ const kccshop = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -166,9 +184,12 @@ const tncstore = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -185,9 +206,12 @@ const npcshop = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -203,9 +227,12 @@ const khoavang = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -224,9 +251,12 @@ const songphuong = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -244,9 +274,12 @@ const tplab = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -264,9 +297,12 @@ const gland = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -284,9 +320,12 @@ const memoryzone = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -303,9 +342,12 @@ const hacom = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -323,9 +365,12 @@ const tinhocngoisao = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -343,9 +388,12 @@ const myboss = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -362,9 +410,12 @@ const minhancomputer = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -381,9 +432,12 @@ const sieuthimaychu = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -400,9 +454,12 @@ const maytinhbinhduong = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -419,9 +476,12 @@ const ankhang = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -438,9 +498,12 @@ const phongvu = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -457,9 +520,12 @@ const anphatpc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -476,9 +542,12 @@ const xgear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -496,9 +565,12 @@ const playzone = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -516,9 +588,12 @@ const dergo = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -535,9 +610,12 @@ const ergonomic = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -554,9 +632,12 @@ const themanson = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -573,9 +654,12 @@ const akko = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -592,9 +676,12 @@ const owlgaming = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -612,9 +699,12 @@ const tmins = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -633,9 +723,12 @@ const tanthanhdanh = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -653,9 +746,12 @@ const hotgear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -673,9 +769,12 @@ const satech = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -691,9 +790,12 @@ const bpstore = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -714,9 +816,12 @@ const hangchinhhieu = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -734,9 +839,12 @@ const soigear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -753,9 +861,12 @@ const kicap = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -772,9 +883,12 @@ const khanhhan = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -792,9 +906,12 @@ const lg = async (link) => {
         link,
         important: "/brands/lg-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -812,9 +929,12 @@ const thegioigear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -831,9 +951,12 @@ const banghechoigame = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -851,9 +974,12 @@ const logitech = async (link) => {
         link,
         important: "/brands/logitech-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -872,9 +998,12 @@ const razer = async (link) => {
         link,
         important: "/brands/razer-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -892,9 +1021,12 @@ const steelseries = async (link) => {
         link,
         important: "/brands/steelseries-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -912,9 +1044,12 @@ const nzxt = async (link) => {
         link,
         important: "/brands/nzxt-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -932,9 +1067,12 @@ const asus = async (link) => {
         link,
         important: "/brands/asus-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -952,9 +1090,12 @@ const flEsports = async (link) => {
         link,
         important: "/brands/fl-esports.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -972,9 +1113,12 @@ const akkogear = async (link) => {
         link,
         important: "/brands/akkogear-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -993,9 +1137,12 @@ const edravn = async (link) => {
         link,
         important: "/brands/edra-logo.png",
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1011,9 +1158,12 @@ const tnc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1029,9 +1179,12 @@ const haianh = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1047,9 +1200,12 @@ const mixicomputer = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1065,9 +1221,12 @@ const azaudio = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1084,9 +1243,12 @@ const gearshop = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1103,9 +1265,12 @@ const combatgaming = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1121,9 +1286,12 @@ const hoangphatvn = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1139,9 +1307,12 @@ const saigongear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1158,9 +1329,12 @@ const mediamart = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1177,9 +1351,12 @@ const nguyenkim = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1196,9 +1373,12 @@ const quynhoncomputer = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1215,9 +1395,12 @@ const tinhocdaiviet = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1233,9 +1416,12 @@ const chinhnhan = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1253,9 +1439,12 @@ const ergochair = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1272,9 +1461,12 @@ const gtchair = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1290,9 +1482,12 @@ const ergohome = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1309,9 +1504,12 @@ const dandihome = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1328,9 +1526,12 @@ const beegaming = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1347,9 +1548,12 @@ const phukienmaytinh = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1366,9 +1570,12 @@ const eagear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1385,9 +1592,12 @@ const ahstore = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1404,9 +1614,12 @@ const maytinhhd = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1423,9 +1636,12 @@ const ezpc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1442,9 +1658,12 @@ const thinkpro = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1461,9 +1680,12 @@ const phongcachxanh = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1480,9 +1702,12 @@ const kythuatsovn = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1499,9 +1724,12 @@ const vnsup = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1519,9 +1747,12 @@ const dellpc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1538,9 +1769,12 @@ const maianhpc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1557,9 +1791,12 @@ const mypc = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1576,9 +1813,12 @@ const punstore = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1595,9 +1835,12 @@ const laptop123 = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1614,9 +1857,12 @@ const benCom = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1634,9 +1880,12 @@ const hugotech = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1653,9 +1902,12 @@ const shopcom = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1672,9 +1924,12 @@ const logitechg = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1691,9 +1946,12 @@ const mygear = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1711,9 +1969,12 @@ const maytinhbienhoa = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1731,9 +1992,12 @@ const chuvu = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1751,9 +2015,12 @@ const nguyenvu = async (link) => {
         price,
         link,
       };
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -1767,9 +2034,12 @@ const apshop = async (link) => {
         $('meta[property="og:price:amount"]').attr("content")
       );
       return price;
+    }else{
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 

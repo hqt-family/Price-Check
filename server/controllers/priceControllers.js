@@ -90,9 +90,9 @@ const putPrice = asyncHandler(async (req, res) => {
       if (item && typeof item.link !== undefined) {
         const link = data[key].link || "";
         switch (true) {
-          /*case link.includes("cellphones"):
+          case link.includes("cellphones"):
             data[key] = (await checkPrices.cellphones(link)) || { link };
-            break;*/
+            break;
           case link.includes("gearvn"):
             data[key] = (await checkPrices.gearvn(link)) || { link };
             break;
@@ -135,9 +135,9 @@ const putPrice = asyncHandler(async (req, res) => {
           case link.includes("gland"):
             data[key] = (await checkPrices.gland(link)) || { link };
             break;
-          case link.includes("sieuthimaychu"):
+          /*case link.includes("sieuthimaychu"):
             data[key] = (await checkPrices.sieuthimaychu(link)) || { link };
-            break;
+            break;*/
           case link.includes("maytinhbinhduong"):
             data[key] = (await checkPrices.maytinhbinhduong(link)) || { link };
             break;

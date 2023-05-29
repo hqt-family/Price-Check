@@ -872,10 +872,8 @@ const tanthanhdanh = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price =
-        replaceToNumber(
-          $('[property="product:price:amount"]').attr("content")
-        ) || null;
+      var obj = $('.variations_form.cart').attr('data-product_variations');
+      var price = checkOffers(obj, "display_price") || null;
       return {
         brand: "tanthanhdanh",
         price,
@@ -2455,9 +2453,8 @@ const nguyenvu = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var price = replaceToNumber(
-        $('meta[property="product:price:amount"]').attr("content")
-      );
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
       return {
         brand: "nguyenvu",
         price,

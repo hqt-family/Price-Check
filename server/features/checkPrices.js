@@ -872,8 +872,9 @@ const tanthanhdanh = async (link) => {
     const data = (response && response.data) || null;
     if (data) {
       const $ = cheerio.load(response.data);
-      var obj = $('.variations_form.cart').attr('data-product_variations');
-      var price = checkOffers(obj, "display_price") || null;
+      var obj = $(".variations_form.cart").attr("data-product_variations");
+      var flagPrice = obj.split('display_price":')[1].split(",")[0];
+      var price = replaceToNumber(flagPrice.trim()) || null;
       return {
         brand: "tanthanhdanh",
         price,

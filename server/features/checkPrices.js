@@ -1,4 +1,3 @@
-const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 const axios = require("axios");
 
@@ -643,16 +642,6 @@ const anphatpc = async (link) => {
 
 const xgear = async (link) => {
   try {
-    const isLastChar = link.slice(-1);
-    const linkWithNoLastChar = link.slice(0, -1);
-    if (String(isLastChar) === "/") link = linkWithNoLastChar;
-
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto(link);
-    if (page.url() !== link) link = page.url();
-    await browser.close();
-
     const response = await axios.get(link, {
       maxRedirects: 0,
       timeout: 4000,
@@ -2538,18 +2527,18 @@ const techspace = async (link) => {
 
 const isCrawlData = async (brand, link) => {
   try {
-    const isLastChar = link.slice(-1);
-    const linkWithNoLastChar = link.slice(0, -1);
-    if (String(isLastChar) === "/") link = linkWithNoLastChar;
+    // const isLastChar = link.slice(-1);
+    // const linkWithNoLastChar = link.slice(0, -1);
+    // if (String(isLastChar) === "/") link = linkWithNoLastChar;
 
-    const browser = await puppeteer.launch({
-      headless: false,
-      args: ["--no-sandbox"],
-    });
-    const page = await browser.newPage();
-    await page.goto(link);
-    if (page.url() !== link) link = page.url();
-    await browser.close();
+    // const browser = await puppeteer.launch({
+    //   headless: false,
+    //   args: ["--no-sandbox"],
+    // });
+    // const page = await browser.newPage();
+    // await page.goto(link);
+    // if (page.url() !== link) link = page.url();
+    // await browser.close();
 
     const response = await axios.get(link, {
       maxRedirects: 0,

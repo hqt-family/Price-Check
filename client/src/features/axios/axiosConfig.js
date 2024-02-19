@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const httpClient = axios.create({
-  baseURL: "http://localhost:8000",
-  //baseURL: "https://hammerhead-app-wjzp7.ondigitalocean.app"
+  //baseURL: "http://localhost:8000",
+  baseURL: "https://hammerhead-app-wjzp7.ondigitalocean.app",
 });
 
 httpClient.interceptors.request.use(

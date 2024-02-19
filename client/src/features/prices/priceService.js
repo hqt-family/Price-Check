@@ -1,7 +1,4 @@
-import axios from "axios";
-
-// const API_URL = "http://localhost:8000/api/prices/";
-const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/prices/";
+import httpClient from "../axios/axiosConfig";
 
 const create = async (priceData, token) => {
   const config = {
@@ -9,7 +6,7 @@ const create = async (priceData, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.post(API_URL, priceData, config);
+  const response = await httpClient.post("/api/prices/", priceData, config); /* prettier-ignore */
   return response.data;
 };
 
@@ -19,7 +16,7 @@ const updates = async (priceData, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.put(API_URL + priceData.id, priceData, config);
+  const response = await httpClient.put(`/api/prices/${priceData.id}`, priceData, config); /* prettier-ignore */
   return response.data;
 };
 

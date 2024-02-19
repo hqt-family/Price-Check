@@ -1,15 +1,14 @@
-import axios from "axios";
+import httpClient from "../axios/axiosConfig";
 
-// const API_URL = "http://localhost:8000/api/user/";
-const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/user/";
+//const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/user/"
 
 const getUsers = async (permission) => {
-  const response = await axios.get(API_URL + "all", { params: permission });
+  const response = await httpClient.get("/api/user/all", { params: permission }); /* prettier-ignore */
   return response.data;
 };
 
 const loginUser = async (userData) => {
-  const response = await axios.post(API_URL + "login", userData);
+  const response = await httpClient.post("/api/user/login", userData); /* prettier-ignore */
 
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
@@ -19,7 +18,7 @@ const loginUser = async (userData) => {
 };
 
 const updateUser = async (userData) => {
-  const response = await axios.put(API_URL + "update/" + userData.id, userData);
+  const response = await httpClient.put(`/api/user/update/${userData.id}`, userData) /* prettier-ignore */
   return response.data;
 };
 

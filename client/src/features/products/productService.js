@@ -1,11 +1,7 @@
-import axios from "axios";
-
-// const API_URL = "http://localhost:8000/embed/products/";
-const API_URL =
-  "https://hammerhead-app-wjzp7.ondigitalocean.app/embed/products/";
+import httpClient from "../axios/axiosConfig";
 
 const call_apiProduct = async (options) => {
-  const response = await axios.get(API_URL, { params: options });
+  const response = await httpClient.get("/embed/products/", { params: options }); /* prettier-ignore */
   return response.data;
 };
 

@@ -2547,6 +2547,7 @@ const isCrawlData = async (brand, link) => {
     await page.goto(link);
     if (page.url() !== link) link = page.url();
     await browser.close();
+    console.log(link);
 
     const response = await axios.get(link, {
       maxRedirects: 0,

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/user/";
-//const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/user/"
+// const API_URL = "http://localhost:8000/api/user/";
+const API_URL = "https://hammerhead-app-wjzp7.ondigitalocean.app/api/user/";
 
 const getUsers = async (permission) => {
   const response = await axios.get(API_URL + "all", { params: permission });
@@ -16,7 +16,7 @@ const loginUser = async (userData) => {
   }
 
   return response.data;
-}; 
+};
 
 const updateUser = async (userData) => {
   const response = await axios.put(API_URL + "update/" + userData.id, userData);
@@ -31,7 +31,7 @@ const authServices = {
   getUsers,
   loginUser,
   updateUser,
-  logoutUser
+  logoutUser,
 };
 
 export default authServices;

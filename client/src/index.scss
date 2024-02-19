@@ -123,6 +123,8 @@ ul {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+  font-size: 16px;
+  font-weight: 900;
 }
 
 .boxContainer {
@@ -172,4 +174,22 @@ ul {
 
 .color-red {
   color: red !important;
+}
+
+.listPrice {
+  column-count: 3;
+  @media (max-width: 991px) {
+    column-count: 2;
+  }
+  @media (max-width: 600px) {
+    column-count: 1;
+  }
+  li {
+    padding: 7.5px 0;
+    min-height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }

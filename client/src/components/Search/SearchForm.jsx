@@ -1,13 +1,19 @@
 import { Input, Typography } from "antd";
+import { useDebouncedCallback } from "use-debounce";
 
-function SearchForm({ valueSearch, setValueSearch }) {
+function SearchForm({ isLoadingProduct, valueSearch, setValueSearch }) {
+  const debounced = useDebouncedCallback((value) => {
+    setValueSearch(value);
+  }, 1000);
   return (
     <Input.Search
       addonBefore={<Typography.Text strong>Tìm kiếm</Typography.Text>}
       placeholder="Nhập tên của sản phẩm..."
       defaultValue={valueSearch}
-      onChange={(e) => setValueSearch(e.target.value)}
-      enterButton
+      onChange={(e) => debounced(e.target.value)}
+      loading={isLoadingProduct}
+      enterButton="Tìm kiếm"
+      size="large"
     />
   );
 }

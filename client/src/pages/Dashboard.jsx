@@ -19,9 +19,8 @@ function Dashboard() {
 
   const [valueSearch, setValueSearch] = useState("");
 
-  const { products, isErrorProduct, messageProduct } = useSelector(
-    (state) => state.products
-  );
+  const { products, isLoadingProduct, isErrorProduct, messageProduct } =
+    useSelector((state) => state.products);
   const { prices, isLoadingPrice, isErrorPrice, messagePrice } = useSelector(
     (state) => state.prices
   );
@@ -31,17 +30,14 @@ function Dashboard() {
       toast.error(messagePrice);
     }
 
-    const timeOutId = setTimeout(() => {
-      if (isErrorProduct) {
-        toast.error(messageProduct);
-      }
-      if (valueSearch !== "") {
-        dispatch(getProducts({ keywords: valueSearch }));
-      } else {
-        dispatch(resetProduct());
-      }
-    }, 500);
-    return () => clearTimeout(timeOutId);
+    if (isErrorProduct) {
+      toast.error(messageProduct);
+    }
+    if (valueSearch !== "") {
+      dispatch(getProducts({ keywords: valueSearch }));
+    } else {
+      dispatch(resetProduct());
+    }
   }, [
     isErrorPrice,
     messagePrice,
@@ -59,7 +55,11 @@ function Dashboard() {
   return (
     <Space direction="vertical" size={15} className="home-body-wrap">
       <Space direction="vertical" size={10} className="home-body-search">
-        <SearchForm valueSearch={valueSearch} setValueSearch={setValueSearch} />
+        <SearchForm
+          isLoadingProduct={isLoadingProduct}
+          valueSearch={valueSearch}
+          setValueSearch={setValueSearch}
+        />
         <SearchData products={products} />
       </Space>
       {prices && (

@@ -1,3 +1,4 @@
+const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
 const axios = require("axios");
 
@@ -64,7 +65,6 @@ const cellphones = async (link) => {
       return;
     }
   } catch (error) {
-    console.log(link);
     return;
   }
 };
@@ -643,6 +643,16 @@ const anphatpc = async (link) => {
 
 const xgear = async (link) => {
   try {
+    const isLastChar = link.slice(-1);
+    const linkWithNoLastChar = link.slice(0, -1);
+    if (String(isLastChar) === "/") link = linkWithNoLastChar;
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(link);
+    if (page.url() !== link) link = page.url();
+    await browser.close();
+
     const response = await axios.get(link, {
       maxRedirects: 0,
       timeout: 4000,
@@ -655,6 +665,12 @@ const xgear = async (link) => {
       const $ = cheerio.load(response.data);
       var obj = $('[type="application/ld+json"]');
       var price = checkOffers(obj, "price") || null;
+      if (price == null) {
+        price =
+          replaceToNumber(
+            $('meta[property="og:price:amount"]').attr("content")
+          ) || null;
+      }
       return {
         brand: "xgear",
         price,
@@ -2493,7 +2509,106 @@ const apshop = async (link) => {
   }
 };
 
+const techspace = async (link) => {
+  try {
+    const response = await axios.get(link, {
+      maxRedirects: 0,
+      timeout: 4000,
+      validateStatus: function (status) {
+        return status >= 200 && status <= 300;
+      },
+    });
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      var obj = $('[type="application/ld+json"]');
+      var price = checkOffers(obj, "price") || null;
+      return {
+        brand: "techspace",
+        price,
+        link,
+      };
+    } else {
+      return;
+    }
+  } catch (error) {
+    return;
+  }
+};
+
+const isCrawlData = async (brand, link) => {
+  try {
+    const isLastChar = link.slice(-1);
+    const linkWithNoLastChar = link.slice(0, -1);
+    if (String(isLastChar) === "/") link = linkWithNoLastChar;
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(link);
+    if (page.url() !== link) link = page.url();
+    await browser.close();
+
+    const response = await axios.get(link, {
+      maxRedirects: 0,
+      timeout: 5000,
+      validateStatus: function (status) {
+        return status >= 200 && status <= 300;
+      },
+    });
+    const data = (response && response.data) || null;
+    if (data) {
+      const $ = cheerio.load(response.data);
+      let price = null;
+
+      if (price == null) {
+        if ($('meta[property="product:sale_price:amount"]').length > 0) {
+          price =
+            replaceToNumber(
+              $('meta[property="product:sale_price:amount"]').attr("content")
+            ) || null;
+        }
+      }
+
+      if (price == null) {
+        if ($('meta[property="og:price:amount"]').length > 0) {
+          price =
+            replaceToNumber(
+              $('meta[property="og:price:amount"]').attr("content")
+            ) || null;
+        }
+      }
+
+      if (price == null) {
+        if ($('meta[property="product:price:amount"]').length > 0) {
+          price =
+            replaceToNumber(
+              $('meta[property="product:price:amount"]').attr("content")
+            ) || null;
+        }
+      }
+
+      if (price == null) {
+        if ($('[type="application/ld+json"]').length > 0) {
+          var obj = $('[type="application/ld+json"]');
+          price = checkOffers(obj, "price");
+        }
+      }
+
+      if (Number(price) === 0) price = 9999999999;
+      return {
+        brand,
+        price,
+        link,
+      };
+    } else return;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+};
+
 const checkPrices = {
+  isCrawlData,
   mygear,
   logitechg,
   nguyenvu,
@@ -2584,5 +2699,6 @@ const checkPrices = {
   hoangphatvn,
   saigongear,
   apshop,
+  techspace,
 };
 module.exports = checkPrices;

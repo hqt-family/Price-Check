@@ -1,5 +1,5 @@
 import { CloudUploadOutlined } from "@ant-design/icons";
-import { Button, Col, Input, Row, Space, Typography, Form } from "antd";
+import { Button, Col, Input, Row, Space, Typography, Form, Flex } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updatePrices } from "../../features/prices/priceSlice";
@@ -41,7 +41,7 @@ function PriceData({ prices }) {
           <Space>
             Chênh lệch so với giá nhỏ nhất:
             <Text strong className="ml-1">
-              {prices.data[0].price
+              {prices.data[0].price != null
                 ? comparePrice(prices.productPrice, prices.data[0].price)
                 : "Chưa có"}
             </Text>
@@ -64,17 +64,17 @@ function PriceData({ prices }) {
     formData.length > 0 &&
     formData.map((data, index) =>
       data && data.link ? (
-        <Col xs={{ span: 24 }} sm={{ span: 8 }} key={index}>
+        <li key={index}>
           <PriceItem stt={index} price={data} onRemove={onRemove} />
-        </Col>
+        </li>
       ) : (
         authExits &&
         JSON.parse(authExits).permission !== "member" && (
-          <Col xs={{ span: 24 }} sm={{ span: 8 }} key={index}>
+          <li key={index}>
             <Form.Item name={index} noStyle>
               <Input />
             </Form.Item>
-          </Col>
+          </li>
         )
       )
     );
@@ -83,7 +83,7 @@ function PriceData({ prices }) {
     <Form onFinish={onFinish}>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         {priceSortDom}
-        <Row gutter={[15, 15]}>{priceDataDom}</Row>
+        <ul className="listPrice">{priceDataDom}</ul>
       </Space>
     </Form>
   );

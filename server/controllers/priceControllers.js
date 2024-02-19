@@ -91,7 +91,7 @@ const putPrice = asyncHandler(async (req, res) => {
         const link = data[key].link || "";
         switch (true) {
           case link.includes("cellphones"):
-            data[key] = (await checkPrices.cellphones(link)) || { link };
+            data[key] = (await checkPrices.isCrawlData("cellphones", link)) || { link }; /* prettier-ignore */
             break;
           case link.includes("gearvn"):
             data[key] = (await checkPrices.gearvn(link)) || { link };
@@ -142,7 +142,9 @@ const putPrice = asyncHandler(async (req, res) => {
             data[key] = (await checkPrices.maytinhbinhduong(link)) || { link };
             break;
           case link.includes("memoryzone"):
-            data[key] = (await checkPrices.memoryzone(link)) || { link };
+            data[key] = (await checkPrices.isCrawlData("memoryzone", link)) || {
+              link,
+            };
             break;
           case link.includes("tinhocngoisao"):
             data[key] = (await checkPrices.tinhocngoisao(link)) || { link };
@@ -181,7 +183,7 @@ const putPrice = asyncHandler(async (req, res) => {
             data[key] = (await checkPrices.tmins(link)) || { link };
             break;
           case link.includes("tanthanhdanh"):
-            data[key] = (await checkPrices.tanthanhdanh(link)) || { link };
+            data[key] = (await checkPrices.isCrawlData("tanthanhdanh", link)) || { link }; /* prettier-ignore */
             break;
           case link.includes("hotgear"):
             data[key] = (await checkPrices.hotgear(link)) || { link };
@@ -360,6 +362,9 @@ const putPrice = asyncHandler(async (req, res) => {
           case link.includes("mygear.vn"):
             data[key] = (await checkPrices.mygear(link)) || { link };
             break;
+          case link.includes("techspace.vn"):
+            data[key] = (await checkPrices.techspace(link)) || { link };
+            break;
           default:
             break;
         }
@@ -390,7 +395,7 @@ const putPrice = asyncHandler(async (req, res) => {
 
 const deletePrice = asyncHandler(async (req, res) => {
   const deletePrice = await Price.findByIdAndDelete(req.params.id);
-  res.status(200).json({ id: req.params.id }); 
+  res.status(200).json({ id: req.params.id });
 });
 
 module.exports = {

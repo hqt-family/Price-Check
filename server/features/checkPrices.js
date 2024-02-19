@@ -2542,12 +2542,14 @@ const isCrawlData = async (brand, link) => {
     const linkWithNoLastChar = link.slice(0, -1);
     if (String(isLastChar) === "/") link = linkWithNoLastChar;
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: false,
+      args: ["--no-sandbox"],
+    });
     const page = await browser.newPage();
     await page.goto(link);
     if (page.url() !== link) link = page.url();
     await browser.close();
-    console.log(link);
 
     const response = await axios.get(link, {
       maxRedirects: 0,

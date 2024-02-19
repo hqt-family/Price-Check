@@ -159,7 +159,7 @@ const putPrice = asyncHandler(async (req, res) => {
             data[key] = (await checkPrices.anphatpc(link)) || { link };
             break;
           case link.includes("xgear"):
-            data[key] = (await checkPrices.xgear(link)) || { link };
+            data[key] = (await checkPrices.isCrawlData("xgear", link)) || { link }; /* prettier-ignore */
             break;
           case link.includes("playzone"):
             data[key] = (await checkPrices.playzone(link)) || { link };
